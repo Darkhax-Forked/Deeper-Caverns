@@ -18,6 +18,14 @@ archivesBaseName = 'deepercaverns'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
+sourceSets {
+  main {
+    resources {
+      srcDirs += "src/generated/resources"
+    }
+  }
+}
+
 minecraft {
     mappings channel: 'snapshot', version: '20190930-1.14.3'
 
