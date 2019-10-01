@@ -1,2 +1,2 @@
 # Deeper-Caverns
-A nether expansion.
+A Nether expansion.

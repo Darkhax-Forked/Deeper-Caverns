@@ -4,11 +4,11 @@ issueTrackerURL="https://github.com/Team-Hollow/Deeper-Caverns/issues"
 
 [[mods]]
 modId="deepercaverns"
-version="0.0.1"
+version="0.0.1-alpha"
 displayName="Deeper Caverns"
-displayURL="http://example.com/"
-authors="TODO"
-description='''A nether expansion.'''
+displayURL="https://github.com/Team-Hollow/Deeper-Caverns"
+authors="bl4ckscor3, Cipher Zero X, Endergized, Lachney, Mahtaran, Vamacheron"
+description='''A Nether expansion.'''
 
 [[dependencies.deepercaverns]]
     modId="forge"
