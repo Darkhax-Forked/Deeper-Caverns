@@ -62,9 +62,9 @@ public class IgneousGolemEntity extends MonsterEntity
 		@Override
 		protected void checkAndPerformAttack(LivingEntity enemy, double distToEnemySqr)
 		{
-			double attakReachSqr = getAttackReachSqr(enemy);
+			double attackReachSqr = getAttackReachSqr(enemy);
 
-			if (distToEnemySqr <= attakReachSqr && attackTick <= 0)
+			if (distToEnemySqr <= attackReachSqr && attackTick <= 0)
 			{
 				attackTick = 20;
 				attacker.swingArm(Hand.MAIN_HAND);

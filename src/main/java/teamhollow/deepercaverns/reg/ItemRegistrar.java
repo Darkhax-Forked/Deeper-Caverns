@@ -17,11 +17,13 @@ import teamhollow.deepercaverns.DeeperCaverns;
 public class ItemRegistrar
 {
 	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = null;
+	public static final Item WITHER_CRUSHER_SPAWN_EGG = null;
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.IGNEOUS_GOLEM, 0xEC5300, 0xFFB605));
+		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.WITHER_CRUSHER, 0x333333, 0x999999));
 	}
 
 	private static SpawnEggItem makeSpawnEgg(EntityType<?> type, int mainEggColor, int secondaryEggColor)

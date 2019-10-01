@@ -1,5 +1,7 @@
 {
     "item.deepercaverns.igneous_golem_spawn_egg": "Igneous Golem Spawn Egg",
+    "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
     
-    "entity.deepercaverns.igneous_golem": "Igneous Golem"
+    "entity.deepercaverns.igneous_golem": "Igneous Golem",
+    "entity.deepercaverns.wither_crusher": "Wither Crusher"
 }

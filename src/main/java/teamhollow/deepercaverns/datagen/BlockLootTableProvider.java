@@ -41,5 +41,4 @@ public abstract class BlockLootTableProvider extends BaseLootTableProvider<Block
 	{
 		return entry.getValue().setParameterSet(LootParameterSets.BLOCK).build();
 	}
-
 }
