@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 public class DeeperCaverns
 {
 	public static final String MODID = "deepercaverns";
+	public static final String PREFIX = MODID + ":";
 
 	public DeeperCaverns()
 	{
