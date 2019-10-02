@@ -3,6 +3,8 @@
     "item.deepercaverns.igneous_golem_spawn_egg": "Feuriger-Golem-Spawn-Ei",
     "item.deepercaverns.rock_golem_spawn_egg": "Steingolem-Spawn-Ei",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",
+ 
+    "itemGroup.deepercaverns": "Deeper Caverns",
     
     "entity.deepercaverns.arcane": "Arkane",
     "entity.deepercaverns.igneous_golem": "Feuriger Golem",

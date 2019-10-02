@@ -3,6 +3,8 @@
     "item.deepercaverns.igneous_golem_spawn_egg": "Igneous Golem Spawn Egg",
     "item.deepercaverns.rock_golem_spawn_egg": "Rock Golem Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
+ 
+    "itemGroup.deepercaverns": "Deeper Caverns",
     
     "entity.deepercaverns.arcane": "Arcane",
     "entity.deepercaverns.igneous_golem": "Igneous Golem",

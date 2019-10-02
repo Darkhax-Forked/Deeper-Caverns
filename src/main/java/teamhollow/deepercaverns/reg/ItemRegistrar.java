@@ -2,7 +2,6 @@ package teamhollow.deepercaverns.reg;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -32,7 +31,7 @@ public class ItemRegistrar
 
 	private static SpawnEggItem makeSpawnEgg(EntityType<?> type, int mainEggColor, int secondaryEggColor)
 	{
-		return (SpawnEggItem)new SpawnEggItem(type, mainEggColor, secondaryEggColor, new Item.Properties().group(ItemGroup.MISC))
+		return (SpawnEggItem)new SpawnEggItem(type, mainEggColor, secondaryEggColor, new Item.Properties().group(DeeperCaverns.ITEM_GROUP))
 				.setRegistryName(new ResourceLocation(DeeperCaverns.MODID, type.getRegistryName().getPath() + "_spawn_egg"));
 	}
 }
