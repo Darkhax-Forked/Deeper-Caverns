@@ -30,6 +30,15 @@ public class EntityLootTableGenerator extends EntityLootTableProvider
 						.rolls(ConstantRange.of(1))
 						.addEntry(ItemLootEntry.builder(Items.IRON_NUGGET)
 								.acceptFunction(SetCount.func_215932_a(RandomValueRange.func_215837_a(4.0F, 8.0F))))));
+		lootTables.put(EntityRegistrar.ROCK_GOLEM, LootTable.builder()
+				.addLootPool(LootPool.builder()
+						.rolls(ConstantRange.of(1))
+						.addEntry(ItemLootEntry.builder(Items.COBBLESTONE)
+								.acceptFunction(SetCount.func_215932_a(RandomValueRange.func_215837_a(0.0F, 3.0F)))))
+				.addLootPool(LootPool.builder()
+						.rolls(RandomValueRange.func_215837_a(0.0F, 1.0F))
+						.addEntry(ItemLootEntry.builder(Items.STONE)
+								.acceptFunction(SetCount.func_215932_a(RandomValueRange.func_215837_a(0.0F, 3.0F))))));
 		//same as normal wither skeleton, but without the wither skeleton skull
 		lootTables.put(EntityRegistrar.WITHER_CRUSHER, LootTable.builder()
 				.addLootPool(LootPool.builder()

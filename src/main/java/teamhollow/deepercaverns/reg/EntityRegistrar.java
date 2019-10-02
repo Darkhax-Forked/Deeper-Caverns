@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.entity.IgneousGolemEntity;
+import teamhollow.deepercaverns.entity.RockGolemEntity;
 import teamhollow.deepercaverns.entity.WitherCrusherEntity;
 
 @EventBusSubscriber(modid=DeeperCaverns.MODID, bus=Bus.MOD)
@@ -34,12 +35,14 @@ public class EntityRegistrar
 		return world.getFluidState(pos).isTagged(FluidTags.LAVA) && !world.getBlockState(posUp).isAir(world, posUp);
 	});
 	public static final EntityType<IgneousGolemEntity> IGNEOUS_GOLEM = (EntityType<IgneousGolemEntity>)EntityType.Builder.<IgneousGolemEntity>create(IgneousGolemEntity::new, EntityClassification.MONSTER).immuneToFire().size(1.25F, 2.5F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + IgneousGolemEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, IgneousGolemEntity.NAME));
+	public static final EntityType<RockGolemEntity> ROCK_GOLEM = (EntityType<RockGolemEntity>)EntityType.Builder.<RockGolemEntity>create(RockGolemEntity::new, EntityClassification.MONSTER).size(1.0F, 1.0F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + RockGolemEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, RockGolemEntity.NAME));
 	public static final EntityType<WitherCrusherEntity> WITHER_CRUSHER = (EntityType<WitherCrusherEntity>)EntityType.Builder.<WitherCrusherEntity>create(WitherCrusherEntity::new, EntityClassification.MONSTER).immuneToFire().size(1.5F, 3.3F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + WitherCrusherEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, WitherCrusherEntity.NAME));
 
 	@SubscribeEvent
 	public static void onRegisterEntityTypes(RegistryEvent.Register<EntityType<?>> event)
 	{
 		event.getRegistry().register(IGNEOUS_GOLEM);
+		event.getRegistry().register(ROCK_GOLEM);
 		event.getRegistry().register(WITHER_CRUSHER);
 
 		EntitySpawnPlacementRegistry.register(IGNEOUS_GOLEM, ON_LAVA, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityRegistrar::notPeaceful);
