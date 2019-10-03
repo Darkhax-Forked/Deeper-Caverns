@@ -30,5 +30,6 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 						.addEntry(ItemLootEntry.builder(BlockRegistrar.SOULGLASS))
 						.acceptCondition(MatchTool.builder(
 								new ItemPredicate.Builder().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, IntBound.atLeast(1)))))));
+		lootTables.put(BlockRegistrar.SOULSTONE, createStandardBlockLootTable(BlockRegistrar.SOULSTONE));
 	}
 }
