@@ -22,6 +22,7 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 	@Override
 	protected void addTables()
 	{
+		lootTables.put(BlockRegistrar.BRIGHTFORGE, createStandardBlockLootTable(BlockRegistrar.BRIGHTFORGE));
 		lootTables.put(BlockRegistrar.GLOWSTONE_LANTERN, createStandardBlockLootTable(BlockRegistrar.GLOWSTONE_LANTERN));
 		lootTables.put(BlockRegistrar.SOULGLASS, LootTable.builder()
 				.addLootPool(LootPool.builder()

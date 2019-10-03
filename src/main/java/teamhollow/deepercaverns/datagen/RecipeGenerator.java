@@ -22,6 +22,15 @@ public class RecipeGenerator extends RecipeProvider
 	@Override
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer)
 	{
+		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.BRIGHTFORGE)
+		.patternLine("NNN")
+		.patternLine("N N")
+		.patternLine("MMM")
+		.key('N', Tags.Items.NETHERRACK)
+		.key('M', Blocks.MAGMA_BLOCK)
+		.addCriterion("nether_entered", ChangeDimensionTrigger.Instance.changedDimensionTo(DimensionType.THE_NETHER))
+		.build(consumer);
+
 		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.GLOWSTONE_LANTERN)
 		.patternLine("QQQ")
 		.patternLine("QGQ")
