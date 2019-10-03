@@ -5,6 +5,7 @@
     "block.deepercaverns.pale_glass": "Pale Glass",
     "block.deepercaverns.pale_sand": "Pale Sand",
     "block.deepercaverns.soulglass": "Soulglass",
+    "block.deepercaverns.soul_ore": "Soul Ore",
     "block.deepercaverns.soulstone": "Soulstone",
 
     "item.deepercaverns.arcane_spawn_egg": "Arcane Spawn Egg",
@@ -12,6 +13,7 @@
     "item.deepercaverns.glurker_spawn_egg": "Glurker Spawn Egg",
     "item.deepercaverns.igneous_golem_spawn_egg": "Igneous Golem Spawn Egg",
     "item.deepercaverns.pale_glass_shards": "Pale Glass Shards",
+    "item.deepercaverns.raw_soul": "Raw Soul",
     "item.deepercaverns.rock_golem_spawn_egg": "Rock Golem Spawn Egg",
     "item.deepercaverns.surgefly_spawn_egg": "Surgefly Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",

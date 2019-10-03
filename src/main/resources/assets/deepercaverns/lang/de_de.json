@@ -5,6 +5,7 @@
     "block.deepercaverns.pale_glass": "Fahles Glas",
     "block.deepercaverns.pale_sand": "Fahler Sand",
     "block.deepercaverns.soulglass": "Seelenglas",
+    "block.deepercaverns.soul_ore": "Seelenerz",
     "block.deepercaverns.soulstone": "Seelenstein",
 
     "item.deepercaverns.arcane_spawn_egg": "Arkane-Spawn-Ei",
@@ -12,6 +13,7 @@
     "item.deepercaverns.glurker_spawn_egg": "Gschleicher-Spawn-Ei",
     "item.deepercaverns.igneous_golem_spawn_egg": "Feuriger-Golem-Spawn-Ei",
     "item.deepercaverns.pale_glass_shards": "Fahle Glasscherben",
+    "item.deepercaverns.raw_soul": "Rohe Seele",
     "item.deepercaverns.rock_golem_spawn_egg": "Steingolem-Spawn-Ei",
     "item.deepercaverns.surgefly_spawn_egg": "Sturmfliege-Spawn-Ei",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",

@@ -27,6 +27,7 @@ public class ItemRegistrar
 	public static final Item GLURKER_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item PALE_GLASS_SHARDS = RegistryUtil.injected();
+	public static final Item RAW_SOUL = RegistryUtil.injected();
 	public static final Item ROCK_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item SURGEFLY_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item WITHER_CRUSHER_SPAWN_EGG = RegistryUtil.injected();
@@ -44,6 +45,7 @@ public class ItemRegistrar
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.GLURKER, 0xFF5733, 0xC70039));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.IGNEOUS_GOLEM, 0xEC5300, 0xFFB605));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass_shards")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "raw_soul")));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.ROCK_GOLEM, 0x505050, 0x107414));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.SURGEFLY, 0xE9D700, 0xA98600));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.WITHER_CRUSHER, 0x333333, 0x999999));
