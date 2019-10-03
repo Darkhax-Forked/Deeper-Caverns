@@ -27,7 +27,7 @@ sourceSets {
 }
 
 minecraft {
-    mappings channel: 'snapshot', version: '20190930-1.14.3'
+    mappings channel: 'snapshot', version: '20191003-1.14.3'
 
     runs {
         client {
@@ -67,7 +67,7 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.14.4-28.1.26'
+    minecraft 'net.minecraftforge:forge:1.14.4-28.1.31'
 }
 
 jar {
