@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deepercaverns:glowstone_lantern"
+    ]
+  },
+  "criteria": {
+    "nether_entered": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "minecraft:the_nether"
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deepercaverns:glowstone_lantern"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nether_entered",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QQQ",
+    "QGQ",
+    "QQQ"
+  ],
+  "key": {
+    "Q": {
+      "tag": "forge:gems/quartz"
+    },
+    "G": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "deepercaverns:glowstone_lantern"
+  }
+}

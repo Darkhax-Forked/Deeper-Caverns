@@ -17,5 +17,6 @@ public class DataGenRegistrar
 
 		generator.addProvider(new BlockLootTableGenerator(generator));
 		generator.addProvider(new EntityLootTableGenerator(generator));
+		generator.addProvider(new RecipeGenerator(generator));
 	}
 }
