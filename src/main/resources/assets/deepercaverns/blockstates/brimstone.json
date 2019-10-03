@@ -1,5 +1,10 @@
 {
     "variants": {
-        "": { "model": "deepercaverns:block/brimstone" }
+        "": [
+            { "model": "deepercaverns:block/brimstone" },
+            { "model": "deepercaverns:block/brimstone", "y": 90 },
+            { "model": "deepercaverns:block/brimstone", "y": 180 },
+            { "model": "deepercaverns:block/brimstone", "y": 270 }
+        ]
     }
 }
