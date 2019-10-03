@@ -26,11 +26,14 @@ public class RecipeGenerator extends RecipeProvider
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer)
 	{
 		//smelting recipes
-		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BlockRegistrar.PALE_SAND), BlockRegistrar.PALE_GLASS, 0.1F, 200)
-		.addCriterion("has_pale_sand", hasItem(BlockRegistrar.PALE_SAND))
-		.build(consumer);
 		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BlockRegistrar.BRIMSTONE), ItemRegistrar.BRIMSTONE_POWDER, 0.3F, 200)
 		.addCriterion("has_brimstone", hasItem(BlockRegistrar.BRIMSTONE))
+		.build(consumer);
+		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BlockRegistrar.ONYX_ORE), ItemRegistrar.ONYX_INGOT, 0.3F, 200)
+		.addCriterion("has_onyx_ore", hasItem(BlockRegistrar.ONYX_ORE))
+		.build(consumer);
+		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BlockRegistrar.PALE_SAND), BlockRegistrar.PALE_GLASS, 0.1F, 200)
+		.addCriterion("has_pale_sand", hasItem(BlockRegistrar.PALE_SAND))
 		.build(consumer);
 
 		//shaped recipes

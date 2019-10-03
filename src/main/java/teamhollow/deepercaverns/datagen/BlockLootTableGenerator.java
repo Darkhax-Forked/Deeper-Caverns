@@ -28,6 +28,11 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 		lootTables.put(BlockRegistrar.BRIGHTFORGE, createStandardBlockLootTable(BlockRegistrar.BRIGHTFORGE));
 		lootTables.put(BlockRegistrar.BRIMSTONE, createStandardBlockLootTable(BlockRegistrar.BRIMSTONE));
 		lootTables.put(BlockRegistrar.GLOWSTONE_LANTERN, createStandardBlockLootTable(BlockRegistrar.GLOWSTONE_LANTERN));
+		lootTables.put(BlockRegistrar.ONYX_ORE, LootTable.builder()
+				.addLootPool(LootPool.builder()
+						.rolls(ConstantRange.of(1))
+						.addEntry(ItemLootEntry.builder(BlockRegistrar.ONYX_ORE))
+						.acceptCondition(SurvivesExplosion.builder())));
 		lootTables.put(BlockRegistrar.PALE_GLASS, LootTable.builder()
 				.addLootPool(LootPool.builder()
 						.rolls(ConstantRange.of(1))
