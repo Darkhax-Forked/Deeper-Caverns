@@ -1,13 +1,15 @@
 {
+    "block.deepercaverns.soulglass": "Seelenglas",
+
     "item.deepercaverns.arcane_spawn_egg": "Arkane-Spawn-Ei",
     "item.deepercaverns.glurker_spawn_egg": "Gschleicher-Spawn-Ei",
     "item.deepercaverns.igneous_golem_spawn_egg": "Feuriger-Golem-Spawn-Ei",
     "item.deepercaverns.rock_golem_spawn_egg": "Steingolem-Spawn-Ei",
     "item.deepercaverns.surgefly_spawn_egg": "Sturmfliege-Spawn-Ei",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",
- 
+
     "itemGroup.deepercaverns": "Deeper Caverns",
-    
+
     "entity.deepercaverns.arcane": "Arkane",
     "entity.deepercaverns.glurker": "Gschleicher",
     "entity.deepercaverns.igneous_golem": "Feuriger Golem",

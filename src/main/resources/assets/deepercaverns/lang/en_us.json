@@ -1,13 +1,15 @@
 {
+    "block.deepercaverns.soulglass": "Soulglass",
+
     "item.deepercaverns.arcane_spawn_egg": "Arcane Spawn Egg",
     "item.deepercaverns.glurker_spawn_egg": "Glurker Spawn Egg",
     "item.deepercaverns.igneous_golem_spawn_egg": "Igneous Golem Spawn Egg",
     "item.deepercaverns.rock_golem_spawn_egg": "Rock Golem Spawn Egg",
     "item.deepercaverns.surgefly_spawn_egg": "Surgefly Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
- 
+
     "itemGroup.deepercaverns": "Deeper Caverns",
-    
+
     "entity.deepercaverns.arcane": "Arcane",
     "entity.deepercaverns.glurker": "Glurker",
     "entity.deepercaverns.igneous_golem": "Igneous Golem",
