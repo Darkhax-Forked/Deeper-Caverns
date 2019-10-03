@@ -10,17 +10,18 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import teamhollow.deepercaverns.DeeperCaverns;
+import teamhollow.deepercaverns.util.RegistryUtil;
 
 @EventBusSubscriber(modid=DeeperCaverns.MODID, bus=Bus.MOD)
 @ObjectHolder(DeeperCaverns.MODID)
 public class ItemRegistrar
 {
-	public static final Item ARCANE_SPAWN_EGG = null;
-	public static final Item GLURKER_SPAWN_EGG = null;
-	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = null;
-	public static final Item ROCK_GOLEM_SPAWN_EGG = null;
-	public static final Item SURGEFLY_SPAWN_EGG = null;
-	public static final Item WITHER_CRUSHER_SPAWN_EGG = null;
+	public static final Item ARCANE_SPAWN_EGG = RegistryUtil.injected();
+	public static final Item GLURKER_SPAWN_EGG = RegistryUtil.injected();
+	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = RegistryUtil.injected();
+	public static final Item ROCK_GOLEM_SPAWN_EGG = RegistryUtil.injected();
+	public static final Item SURGEFLY_SPAWN_EGG = RegistryUtil.injected();
+	public static final Item WITHER_CRUSHER_SPAWN_EGG = RegistryUtil.injected();
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
