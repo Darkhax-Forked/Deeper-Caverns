@@ -4,10 +4,12 @@ import java.util.function.Consumer;
 
 import net.minecraft.advancements.criterion.ChangeDimensionTrigger;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.Tags;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
@@ -22,6 +24,12 @@ public class RecipeGenerator extends RecipeProvider
 	@Override
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer)
 	{
+		//smelting recipes
+		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BlockRegistrar.PALE_SAND), BlockRegistrar.PALE_GLASS, 0.1F, 200)
+		.addCriterion("has_pale_sand", hasItem(BlockRegistrar.PALE_SAND))
+		.build(consumer);
+
+		//shaped recipes
 		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.BRIGHTFORGE)
 		.patternLine("NNN")
 		.patternLine("N N")
