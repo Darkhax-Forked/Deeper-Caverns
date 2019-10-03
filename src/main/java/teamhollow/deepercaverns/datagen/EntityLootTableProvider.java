@@ -27,5 +27,4 @@ public abstract class EntityLootTableProvider extends BaseLootTableProvider<Enti
 	{
 		return entry.getValue().setParameterSet(LootParameterSets.ENTITY).build();
 	}
-
 }
