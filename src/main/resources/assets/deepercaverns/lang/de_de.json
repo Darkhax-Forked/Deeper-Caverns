@@ -1,5 +1,6 @@
 {
     "block.deepercaverns.brightforge": "Höllenschmiede",
+    "block.deepercaverns.brimstone": "Schwefel",
     "block.deepercaverns.glowstone_lantern": "Glowstone-Laterne",
     "block.deepercaverns.pale_glass": "Fahles Glas",
     "block.deepercaverns.pale_sand": "Fahler Sand",
@@ -7,6 +8,7 @@
     "block.deepercaverns.soulstone": "Seelenstein",
 
     "item.deepercaverns.arcane_spawn_egg": "Arkane-Spawn-Ei",
+    "item.deepercaverns.brimstone_powder": "Schwefelpulver",
     "item.deepercaverns.glurker_spawn_egg": "Gschleicher-Spawn-Ei",
     "item.deepercaverns.igneous_golem_spawn_egg": "Feuriger-Golem-Spawn-Ei",
     "item.deepercaverns.pale_glass_shards": "Fahle Glasscherben",

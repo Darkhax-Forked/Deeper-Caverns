@@ -13,6 +13,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.Tags;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
+import teamhollow.deepercaverns.reg.ItemRegistrar;
 
 public class RecipeGenerator extends RecipeProvider
 {
@@ -28,6 +29,9 @@ public class RecipeGenerator extends RecipeProvider
 		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BlockRegistrar.PALE_SAND), BlockRegistrar.PALE_GLASS, 0.1F, 200)
 		.addCriterion("has_pale_sand", hasItem(BlockRegistrar.PALE_SAND))
 		.build(consumer);
+		CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BlockRegistrar.BRIMSTONE), ItemRegistrar.BRIMSTONE_POWDER, 0.3F, 200)
+		.addCriterion("has_brimstone", hasItem(BlockRegistrar.BRIMSTONE))
+		.build(consumer);
 
 		//shaped recipes
 		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.BRIGHTFORGE)
@@ -38,7 +42,6 @@ public class RecipeGenerator extends RecipeProvider
 		.key('M', Blocks.MAGMA_BLOCK)
 		.addCriterion("nether_entered", ChangeDimensionTrigger.Instance.changedDimensionTo(DimensionType.THE_NETHER))
 		.build(consumer);
-
 		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.GLOWSTONE_LANTERN)
 		.patternLine("QQQ")
 		.patternLine("QGQ")

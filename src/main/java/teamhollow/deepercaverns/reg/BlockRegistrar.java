@@ -21,6 +21,7 @@ import teamhollow.deepercaverns.util.RegistryUtil;
 public class BlockRegistrar
 {
 	public static final Block BRIGHTFORGE = RegistryUtil.injected();
+	public static final Block BRIMSTONE = RegistryUtil.injected();
 	public static final Block GLOWSTONE_LANTERN = RegistryUtil.injected();
 	public static final Block PALE_GLASS = RegistryUtil.injected();
 	public static final Block PALE_SAND = RegistryUtil.injected();
@@ -31,6 +32,7 @@ public class BlockRegistrar
 	public static void registerBlocks(RegistryEvent.Register<Block> event)
 	{
 		event.getRegistry().register(withItemBlock(new BrightforgeBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.5F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brightforge"))));
+		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone"))));
 		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).lightValue(15)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_lantern"))));
 		event.getRegistry().register(withItemBlock(new GlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass"))));
 		event.getRegistry().register(withItemBlock(new SandBlock(0x5B4538, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_sand"))));

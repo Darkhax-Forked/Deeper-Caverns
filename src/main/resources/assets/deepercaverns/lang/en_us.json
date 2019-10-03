@@ -1,5 +1,6 @@
 {
     "block.deepercaverns.brightforge": "Brightforge",
+    "block.deepercaverns.brimstone": "Brimstone",
     "block.deepercaverns.glowstone_lantern": "Glowstone Lantern",
     "block.deepercaverns.pale_glass": "Pale Glass",
     "block.deepercaverns.pale_sand": "Pale Sand",
@@ -7,6 +8,7 @@
     "block.deepercaverns.soulstone": "Soulstone",
 
     "item.deepercaverns.arcane_spawn_egg": "Arcane Spawn Egg",
+    "item.deepercaverns.brimstone_powder": "Brimstone Powder",
     "item.deepercaverns.glurker_spawn_egg": "Glurker Spawn Egg",
     "item.deepercaverns.igneous_golem_spawn_egg": "Igneous Golem Spawn Egg",
     "item.deepercaverns.pale_glass_shards": "Pale Glass Shards",
