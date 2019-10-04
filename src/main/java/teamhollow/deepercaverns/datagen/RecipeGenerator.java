@@ -70,4 +70,10 @@ public class RecipeGenerator extends RecipeProvider
 		.addCriterion("has_soulbryn_block", hasItem(BlockRegistrar.SOULBRYN_BLOCK))
 		.build(consumer);
 	}
+
+	@Override
+	public String getName()
+	{
+		return "DeeperCavernsRecipes";
+	}
 }
