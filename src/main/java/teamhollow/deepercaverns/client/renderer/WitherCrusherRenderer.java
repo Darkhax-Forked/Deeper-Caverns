@@ -1,4 +1,4 @@
-package teamhollow.deepercaverns.renderer;
+package teamhollow.deepercaverns.client.renderer;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 

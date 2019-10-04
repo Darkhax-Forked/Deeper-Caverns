@@ -1,4 +1,4 @@
-package teamhollow.deepercaverns.screen;
+package teamhollow.deepercaverns.client.screen;
 
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
