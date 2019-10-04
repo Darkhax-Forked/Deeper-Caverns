@@ -43,6 +43,7 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 								ItemLootEntry.builder(ItemRegistrar.PALE_GLASS_SHARDS)
 								.acceptCondition(SurvivesExplosion.builder())))));
 		lootTables.put(BlockRegistrar.PALE_SAND, createStandardBlockLootTable(BlockRegistrar.PALE_SAND));
+		lootTables.put(BlockRegistrar.SOULBRYN_BLOCK, createStandardBlockLootTable(BlockRegistrar.SOULBRYN_BLOCK));
 		lootTables.put(BlockRegistrar.SOULGLASS, LootTable.builder()
 				.addLootPool(LootPool.builder()
 						.rolls(ConstantRange.of(1))

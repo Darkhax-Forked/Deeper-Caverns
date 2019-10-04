@@ -53,5 +53,20 @@ public class RecipeGenerator extends RecipeProvider
 		.key('G', Blocks.GLOWSTONE)
 		.addCriterion("nether_entered", ChangeDimensionTrigger.Instance.changedDimensionTo(DimensionType.THE_NETHER))
 		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.SOULBRYN)
+		.patternLine("BSB")
+		.patternLine("SBS")
+		.patternLine("BSB")
+		.key('B', ItemRegistrar.BRIMSTONE_POWDER)
+		.key('S', Ingredient.fromItems(BlockRegistrar.PALE_SAND, Blocks.SOUL_SAND))
+		.addCriterion("has_brimstone_powder", hasItem(ItemRegistrar.BRIMSTONE_POWDER))
+		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.SOULBRYN_BLOCK)
+		.patternLine("SSS")
+		.patternLine("SSS")
+		.patternLine("SSS")
+		.key('S', ItemRegistrar.SOULBRYN)
+		.addCriterion("has_soulbryn", hasItem(ItemRegistrar.SOULBRYN))
+		.build(consumer);
 	}
 }
