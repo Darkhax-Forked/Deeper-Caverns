@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "deepercaverns:brimstone"
-  },
-  "result": "deepercaverns:brimstone_powder",
-  "experience": 0.3,
-  "cookingtime": 200
-}

@@ -27,7 +27,7 @@ public class SoulbrynExplosion extends Explosion
 		{
 			for(BlockPos pos : affectedBlockPositions)
 			{
-				if(world.getBlockState(pos).isAir(world, pos) && world.getBlockState(pos.down()).isOpaqueCube(this.world, pos.down()) && r.nextInt(3) == 0)
+				if(world.getBlockState(pos).isAir(world, pos) && world.getBlockState(pos.down()).isOpaqueCube(world, pos.down()) && r.nextInt(3) == 0)
 					world.setBlockState(pos, Blocks.LAVA.getDefaultState());
 			}
 		}
