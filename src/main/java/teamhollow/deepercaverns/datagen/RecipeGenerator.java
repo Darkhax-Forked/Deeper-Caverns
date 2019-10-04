@@ -62,5 +62,12 @@ public class RecipeGenerator extends RecipeProvider
 		.key('S', ItemRegistrar.SOULBRYN)
 		.addCriterion("has_soulbryn", hasItem(ItemRegistrar.SOULBRYN))
 		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.SOULFORGE)
+		.patternLine("SSS")
+		.patternLine("S S")
+		.patternLine("SSS")
+		.key('S', BlockRegistrar.SOULBRYN_BLOCK)
+		.addCriterion("has_soulbryn_block", hasItem(BlockRegistrar.SOULBRYN_BLOCK))
+		.build(consumer);
 	}
 }
