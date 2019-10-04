@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BSB",
+    "SBS",
+    "BSB"
+  ],
+  "key": {
+    "B": {
+      "item": "deepercaverns:brimstone_powder"
+    },
+    "S": [
+      {
+        "item": "deepercaverns:pale_sand"
+      },
+      {
+        "item": "minecraft:soul_sand"
+      }
+    ]
+  },
+  "result": {
+    "item": "deepercaverns:soulbryn"
+  }
+}

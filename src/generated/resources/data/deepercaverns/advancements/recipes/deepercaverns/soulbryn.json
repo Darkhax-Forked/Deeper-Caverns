@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deepercaverns:soulbryn"
+    ]
+  },
+  "criteria": {
+    "has_brimstone_powder": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "deepercaverns:brimstone_powder"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deepercaverns:soulbryn"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_brimstone_powder",
+      "has_the_recipe"
+    ]
+  ]
+}

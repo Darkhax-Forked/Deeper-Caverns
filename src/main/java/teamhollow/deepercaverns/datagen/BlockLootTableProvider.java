@@ -20,10 +20,9 @@ public abstract class BlockLootTableProvider extends BaseLootTableProvider<Block
 		super(dataGenerator);
 	}
 
-	protected final LootTable.Builder createStandardBlockLootTable(String name, Block block)
+	protected final LootTable.Builder createStandardBlockLootTable(Block block)
 	{
 		LootPool.Builder builder = LootPool.builder()
-				.name(name)
 				.rolls(ConstantRange.of(1))
 				.addEntry(ItemLootEntry.builder(block))
 				.acceptCondition(SurvivesExplosion.builder());

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "N N",
+    "MMM"
+  ],
+  "key": {
+    "N": {
+      "tag": "forge:netherrack"
+    },
+    "M": {
+      "item": "minecraft:magma_block"
+    }
+  },
+  "result": {
+    "item": "deepercaverns:brightforge"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "deepercaverns:block/pale_sand" },
+            { "model": "deepercaverns:block/pale_sand", "y": 90 },
+            { "model": "deepercaverns:block/pale_sand", "y": 180 },
+            { "model": "deepercaverns:block/pale_sand", "y": 270 }
+        ]
+    }
+}
