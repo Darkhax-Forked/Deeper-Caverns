@@ -24,6 +24,7 @@ public class ItemRegistrar
 	private static List<Block> blocksWithItem = new ArrayList<>();
 	public static final Item ARCANE_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item BRIMSTONE_POWDER = RegistryUtil.injected();
+	public static final Item GLOWSTONE_CRYSTAL = RegistryUtil.injected();
 	public static final Item GLURKER_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item ONYX_INGOT = RegistryUtil.injected();
@@ -44,6 +45,7 @@ public class ItemRegistrar
 
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.ARCANE, 0x3C1361, 0x660066));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone_powder")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal")));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.GLURKER, 0xFF5733, 0xC70039));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.IGNEOUS_GOLEM, 0xEC5300, 0xFFB605));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_ingot")));
