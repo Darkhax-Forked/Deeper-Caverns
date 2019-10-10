@@ -7,9 +7,14 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +23,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.misc.ArmorMaterial;
+import teamhollow.deepercaverns.misc.ItemTier;
 import teamhollow.deepercaverns.util.RegistryUtil;
 
 @EventBusSubscriber(modid=DeeperCaverns.MODID, bus=Bus.MOD)
@@ -28,10 +34,15 @@ public class ItemRegistrar
 	public static final Item ARCANE_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item BRIMSTONE_POWDER = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL = RegistryUtil.injected();
+	public static final Item GLOWSTONE_CRYSTAL_AXE = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL_BOOTS = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL_CHESTPLATE = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL_HELMET = RegistryUtil.injected();
+	public static final Item GLOWSTONE_CRYSTAL_HOE = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL_LEGGINGS = RegistryUtil.injected();
+	public static final Item GLOWSTONE_CRYSTAL_PICKAXE = RegistryUtil.injected();
+	public static final Item GLOWSTONE_CRYSTAL_SHOVEL = RegistryUtil.injected();
+	public static final Item GLOWSTONE_CRYSTAL_SWORD = RegistryUtil.injected();
 	public static final Item GLURKER_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item ONYX_INGOT = RegistryUtil.injected();
@@ -69,6 +80,11 @@ public class ItemRegistrar
 		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.CHEST, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_chestplate")));
 		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.LEGS, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_leggings")));
 		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.FEET, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_boots")));
+		event.getRegistry().register(new SwordItem(ItemTier.GLOWSTONE_CRYSTAL, 3, -2.4F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_sword")));
+		event.getRegistry().register(new ShovelItem(ItemTier.GLOWSTONE_CRYSTAL, 1.5F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_shovel")));
+		event.getRegistry().register(new PickaxeItem(ItemTier.GLOWSTONE_CRYSTAL, 1, -2.8F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_pickaxe")));
+		event.getRegistry().register(new AxeItem(ItemTier.GLOWSTONE_CRYSTAL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_axe")));
+		event.getRegistry().register(new HoeItem(ItemTier.GLOWSTONE_CRYSTAL, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_hoe")));
 		blocksWithItem = null;
 	}
 
