@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArrowItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.HoeItem;
@@ -55,6 +56,7 @@ public class ItemRegistrar
 	public static final Item GLOWSTONE_CRYSTAL_SWORD = RegistryUtil.injected();
 	public static final Item GLURKER_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = RegistryUtil.injected();
+	public static final Item ONYX_ARROW = RegistryUtil.injected();
 	public static final Item ONYX_INGOT = RegistryUtil.injected();
 	public static final Item PALE_GLASS_SHARDS = RegistryUtil.injected();
 	public static final Item RAW_SOUL = RegistryUtil.injected();
@@ -81,6 +83,7 @@ public class ItemRegistrar
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.WITHER_CRUSHER, 0x333333, 0x999999));
 		/*random items*/
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone_powder")));
+		event.getRegistry().register(new ArrowItem(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_arrow")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_ingot")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass_shards")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "raw_soul")));

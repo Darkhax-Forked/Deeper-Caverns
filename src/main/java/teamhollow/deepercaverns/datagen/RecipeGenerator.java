@@ -9,6 +9,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.Tags;
@@ -68,6 +69,15 @@ public class RecipeGenerator extends RecipeProvider
 		.patternLine("SSS")
 		.key('S', BlockRegistrar.SOULBRYN_BLOCK)
 		.addCriterion("has_soulbryn_block", hasItem(BlockRegistrar.SOULBRYN_BLOCK))
+		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.ONYX_ARROW, 4)
+		.patternLine("O")
+		.patternLine("S")
+		.patternLine("F")
+		.key('O', ItemRegistrar.ONYX_INGOT)
+		.key('S', Items.STICK)
+		.key('F', Items.FEATHER)
+		.addCriterion("has_onyx_ingot", hasItem(ItemRegistrar.ONYX_INGOT))
 		.build(consumer);
 	}
 
