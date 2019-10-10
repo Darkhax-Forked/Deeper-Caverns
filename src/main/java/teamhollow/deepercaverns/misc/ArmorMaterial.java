@@ -12,8 +12,9 @@ import teamhollow.deepercaverns.reg.ItemRegistrar;
 
 public enum ArmorMaterial implements IArmorMaterial
 {
-	//same as gold for now
-	GLOWSTONE_CRYSTAL("glowstone_crystal", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F, Ingredient.fromItems(ItemRegistrar.GLOWSTONE_CRYSTAL));
+	//all are the same as gold for now
+	GLOWSTONE_CRYSTAL("glowstone_crystal", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F, Ingredient.fromItems(ItemRegistrar.GLOWSTONE_CRYSTAL)),
+	GHOSTSOUL("ghostsoul", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F, Ingredient.fromItems(ItemRegistrar.GHOSTSOUL_INGOT));
 
 	private final String name;
 	private final int durability;
