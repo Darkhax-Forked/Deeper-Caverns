@@ -48,6 +48,7 @@ public class ItemRegistrar
 	public static final Item ONYX_INGOT = RegistryUtil.injected();
 	public static final Item PALE_GLASS_SHARDS = RegistryUtil.injected();
 	public static final Item RAW_SOUL = RegistryUtil.injected();
+	public static final Item REFINED_SOUL = RegistryUtil.injected();
 	public static final Item ROCK_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item SOULBRYN = RegistryUtil.injected();
 	public static final Item SURGEFLY_SPAWN_EGG = RegistryUtil.injected();
