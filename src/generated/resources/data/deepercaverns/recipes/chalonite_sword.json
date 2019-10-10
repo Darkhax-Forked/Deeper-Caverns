@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "C",
+    "S"
+  ],
+  "key": {
+    "C": {
+      "item": "deepercaverns:chalonite_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "deepercaverns:chalonite_sword"
+  }
+}

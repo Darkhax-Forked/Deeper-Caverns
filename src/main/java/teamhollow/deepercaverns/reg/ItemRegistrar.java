@@ -34,6 +34,8 @@ public class ItemRegistrar
 	private static List<Block> blocksWithItem = new ArrayList<>();
 	public static final Item ARCANE_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item BRIMSTONE_POWDER = RegistryUtil.injected();
+	public static final Item CHALONITE_INGOT = RegistryUtil.injected();
+	public static final Item CHALONITE_SWORD = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_AXE = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_BOOTS = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_CHESTPLATE = RegistryUtil.injected();
@@ -123,6 +125,9 @@ public class ItemRegistrar
 		event.getRegistry().register(new PickaxeItem(ItemTier.ONYX, 1, -2.8F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_pickaxe")));
 		event.getRegistry().register(new AxeItem(ItemTier.ONYX, 6.0F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_axe")));
 		event.getRegistry().register(new HoeItem(ItemTier.ONYX, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_hoe")));
+		//chalonite
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "chalonite_ingot")));
+		event.getRegistry().register(new SwordItem(ItemTier.CHALONITE, 3, -2.4F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "chalonite_sword")));
 		blocksWithItem = null;
 	}
 

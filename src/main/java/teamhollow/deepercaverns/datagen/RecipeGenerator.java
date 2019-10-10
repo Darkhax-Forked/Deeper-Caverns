@@ -79,6 +79,14 @@ public class RecipeGenerator extends RecipeProvider
 		.key('F', Items.FEATHER)
 		.addCriterion("has_onyx_ingot", hasItem(ItemRegistrar.ONYX_INGOT))
 		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.CHALONITE_SWORD)
+		.patternLine("C")
+		.patternLine("C")
+		.patternLine("S")
+		.key('C', ItemRegistrar.CHALONITE_INGOT)
+		.key('S', Items.STICK)
+		.addCriterion("has_chalonite_ingot", hasItem(ItemRegistrar.CHALONITE_INGOT))
+		.build(consumer);
 	}
 
 	@Override

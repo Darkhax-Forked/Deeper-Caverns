@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deepercaverns:chalonite_sword"
+    ]
+  },
+  "criteria": {
+    "has_chalonite_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "deepercaverns:chalonite_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deepercaverns:chalonite_sword"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chalonite_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}
