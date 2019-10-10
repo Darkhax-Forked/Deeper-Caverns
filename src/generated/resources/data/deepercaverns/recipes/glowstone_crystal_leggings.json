@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MMM",
+    "M M",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "deepercaverns:glowstone_crystal"
+    }
+  },
+  "result": {
+    "item": "deepercaverns:glowstone_crystal_leggings"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "O",
+    "S",
+    "F"
+  ],
+  "key": {
+    "O": {
+      "item": "deepercaverns:onyx_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "deepercaverns:onyx_arrow",
+    "count": 4
+  }
+}

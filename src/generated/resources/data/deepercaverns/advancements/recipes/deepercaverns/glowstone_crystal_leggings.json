@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deepercaverns:glowstone_crystal_leggings"
+    ]
+  },
+  "criteria": {
+    "has_glowstone_crystal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "deepercaverns:glowstone_crystal"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deepercaverns:glowstone_crystal_leggings"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_glowstone_crystal",
+      "has_the_recipe"
+    ]
+  ]
+}

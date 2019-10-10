@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MMM",
+    "M M",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "deepercaverns:ghostsoul_ingot"
+    }
+  },
+  "result": {
+    "item": "deepercaverns:ghostsoul_leggings"
+  }
+}

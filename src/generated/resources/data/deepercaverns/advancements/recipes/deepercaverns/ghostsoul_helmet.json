@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deepercaverns:ghostsoul_helmet"
+    ]
+  },
+  "criteria": {
+    "has_ghostsoul_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "deepercaverns:ghostsoul_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deepercaverns:ghostsoul_helmet"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ghostsoul_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}
