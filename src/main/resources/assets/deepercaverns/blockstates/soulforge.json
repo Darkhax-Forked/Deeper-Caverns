@@ -1,5 +1,8 @@
 {
     "variants": {
-        "": { "model": "deepercaverns:block/soulforge" }
+        "facing=north": { "model": "deepercaverns:block/soulforge" },
+        "facing=east": { "model": "deepercaverns:block/soulforge", "y": 90 },
+        "facing=south": { "model": "deepercaverns:block/soulforge", "y": 180 },
+        "facing=west": { "model": "deepercaverns:block/soulforge", "y": 270 }
     }
 }
