@@ -12,6 +12,13 @@
     "block.deepercaverns.soul_ore": "Seelenerz",
     "block.deepercaverns.soulstone": "Seelenstein",
 
+    "entity.deepercaverns.arcane": "Arkane",
+    "entity.deepercaverns.glurker": "Gschleicher",
+    "entity.deepercaverns.igneous_golem": "Feuriger Golem",
+    "entity.deepercaverns.rock_golem": "Steingolem",
+    "entity.deepercaverns.surgefly": "Sturmfliege",
+    "entity.deepercaverns.wither_crusher": "Wither Zerstörer",
+
     "item.deepercaverns.arcane_spawn_egg": "Arkane-Spawn-Ei",
     "item.deepercaverns.brimstone_powder": "Schwefelpulver",
     "item.deepercaverns.glowstone_crystal": "Glowstonekristall",
@@ -29,12 +36,5 @@
     "item.deepercaverns.surgefly_spawn_egg": "Sturmfliege-Spawn-Ei",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",
 
-    "itemGroup.deepercaverns": "Deeper Caverns",
-
-    "entity.deepercaverns.arcane": "Arkane",
-    "entity.deepercaverns.glurker": "Gschleicher",
-    "entity.deepercaverns.igneous_golem": "Feuriger Golem",
-    "entity.deepercaverns.rock_golem": "Steingolem",
-    "entity.deepercaverns.surgefly": "Sturmfliege",
-    "entity.deepercaverns.wither_crusher": "Wither Zerstörer"
+    "itemGroup.deepercaverns": "Deeper Caverns"
 }

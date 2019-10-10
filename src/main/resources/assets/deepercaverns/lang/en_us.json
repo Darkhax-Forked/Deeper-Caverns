@@ -11,6 +11,13 @@
     "block.deepercaverns.soul_ore": "Soul Ore",
     "block.deepercaverns.soulstone": "Soulstone",
 
+    "entity.deepercaverns.arcane": "Arcane",
+    "entity.deepercaverns.glurker": "Glurker",
+    "entity.deepercaverns.igneous_golem": "Igneous Golem",
+    "entity.deepercaverns.rock_golem": "Rock Golem",
+    "entity.deepercaverns.surgefly": "Surgefly",
+    "entity.deepercaverns.wither_crusher": "Wither Crusher",
+
     "item.deepercaverns.arcane_spawn_egg": "Arcane Spawn Egg",
     "item.deepercaverns.brimstone_powder": "Brimstone Powder",
     "item.deepercaverns.glowstone_crystal": "Glowstone Crystal",
@@ -28,12 +35,5 @@
     "item.deepercaverns.surgefly_spawn_egg": "Surgefly Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
 
-    "itemGroup.deepercaverns": "Deeper Caverns",
-
-    "entity.deepercaverns.arcane": "Arcane",
-    "entity.deepercaverns.glurker": "Glurker",
-    "entity.deepercaverns.igneous_golem": "Igneous Golem",
-    "entity.deepercaverns.rock_golem": "Rock Golem",
-    "entity.deepercaverns.surgefly": "Surgefly",
-    "entity.deepercaverns.wither_crusher": "Wither Crusher"
+    "itemGroup.deepercaverns": "Deeper Caverns"
 }
