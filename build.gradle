@@ -67,8 +67,20 @@ minecraft {
     }
 }
 
+repositories {
+    maven { // JEI
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven { // JEI fallback
+        url = "https://modmaven.k-4u.nl"
+    }
+}
+
 dependencies {
     minecraft 'net.minecraftforge:forge:1.14.4-28.1.37'
+    
+	compileOnly fg.deobf("mezz.jei:jei-1.14.4:6.0.0.18:api")
+	runtimeOnly fg.deobf("mezz.jei:jei-1.14.4:6.0.0.18")
 }
 
 jar {

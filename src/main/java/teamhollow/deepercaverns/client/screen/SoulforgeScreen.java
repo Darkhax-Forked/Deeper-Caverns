@@ -9,7 +9,7 @@ import teamhollow.deepercaverns.container.SoulforgeContainer;
 
 public class SoulforgeScreen extends ContainerScreen<SoulforgeContainer>
 {
-	private static final ResourceLocation TEXTURE = new ResourceLocation(DeeperCaverns.MODID, "textures/gui/container/soulforge.png");
+	public static final ResourceLocation TEXTURE = new ResourceLocation(DeeperCaverns.MODID, "textures/gui/container/soulforge.png");
 
 	public SoulforgeScreen(SoulforgeContainer screenContainer, PlayerInventory inv, ITextComponent title)
 	{
