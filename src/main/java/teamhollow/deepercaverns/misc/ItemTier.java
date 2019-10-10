@@ -8,6 +8,7 @@ public enum ItemTier implements IItemTier
 {
 	//all are the same as gold for now
 	GLOWSTONE_CRYSTAL(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.GLOWSTONE_CRYSTAL)),
+	ONYX(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.ONYX_INGOT)),
 	GHOSTSOUL(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.GHOSTSOUL_INGOT));
 
 	private final int harvestLevel;

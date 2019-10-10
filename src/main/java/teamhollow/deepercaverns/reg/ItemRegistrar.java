@@ -57,7 +57,12 @@ public class ItemRegistrar
 	public static final Item GLURKER_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item IGNEOUS_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item ONYX_ARROW = RegistryUtil.injected();
+	public static final Item ONYX_AXE = RegistryUtil.injected();
+	public static final Item ONYX_HOE = RegistryUtil.injected();
 	public static final Item ONYX_INGOT = RegistryUtil.injected();
+	public static final Item ONYX_PICKAXE = RegistryUtil.injected();
+	public static final Item ONYX_SHOVEL = RegistryUtil.injected();
+	public static final Item ONYX_SWORD = RegistryUtil.injected();
 	public static final Item PALE_GLASS_SHARDS = RegistryUtil.injected();
 	public static final Item RAW_SOUL = RegistryUtil.injected();
 	public static final Item REFINED_SOUL = RegistryUtil.injected();
@@ -84,7 +89,6 @@ public class ItemRegistrar
 		/*random items*/
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone_powder")));
 		event.getRegistry().register(new ArrowItem(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_arrow")));
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_ingot")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass_shards")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "raw_soul")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "refined_soul")));
@@ -112,6 +116,13 @@ public class ItemRegistrar
 		event.getRegistry().register(new PickaxeItem(ItemTier.GLOWSTONE_CRYSTAL, 1, -2.8F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_pickaxe")));
 		event.getRegistry().register(new AxeItem(ItemTier.GLOWSTONE_CRYSTAL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_axe")));
 		event.getRegistry().register(new HoeItem(ItemTier.GLOWSTONE_CRYSTAL, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_hoe")));
+		//onyx
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_ingot")));
+		event.getRegistry().register(new SwordItem(ItemTier.ONYX, 3, -2.4F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_sword")));
+		event.getRegistry().register(new ShovelItem(ItemTier.ONYX, 1.5F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_shovel")));
+		event.getRegistry().register(new PickaxeItem(ItemTier.ONYX, 1, -2.8F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_pickaxe")));
+		event.getRegistry().register(new AxeItem(ItemTier.ONYX, 6.0F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_axe")));
+		event.getRegistry().register(new HoeItem(ItemTier.ONYX, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_hoe")));
 		blocksWithItem = null;
 	}
 
