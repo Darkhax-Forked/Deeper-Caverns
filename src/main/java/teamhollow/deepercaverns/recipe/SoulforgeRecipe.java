@@ -81,6 +81,17 @@ public class SoulforgeRecipe
 		return fuel;
 	}
 
+	public static SoulforgeRecipe getMatchingRecipe(ItemStack left, ItemStack right)
+	{
+		for(SoulforgeRecipe recipe : RECIPES.values())
+		{
+			if(recipe.getLeft().test(left) && recipe.getRight().test(right))
+				return recipe;
+		}
+
+		return null;
+	}
+
 	public static void register(SoulforgeRecipe recipe)
 	{
 		if(recipe.registryName == null)

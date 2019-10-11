@@ -12,7 +12,6 @@ import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-import teamhollow.deepercaverns.DCTags;
 import teamhollow.deepercaverns.block.SoulforgeBlock;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.ContainerTypeRegistrar;
@@ -20,7 +19,7 @@ import teamhollow.deepercaverns.tileentity.SoulforgeTileEntity;
 
 public class SoulforgeContainer extends Container
 {
-	private SoulforgeTileEntity te;
+	public final SoulforgeTileEntity te;
 
 	public SoulforgeContainer(int windowId, PlayerInventory playerInv, BlockPos pos)
 	{
@@ -49,10 +48,16 @@ public class SoulforgeContainer extends Container
 			@Override
 			public boolean isItemValid(@Nonnull ItemStack stack)
 			{
-				return stack.getItem().isIn(DCTags.Items.FUEL_SOULFORGE);
+				return h.isItemValid(0, stack);
 			}
 		}));
-		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 128, 35)));
+		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 128, 35) {
+			@Override
+			public boolean isItemValid(ItemStack stack)
+			{
+				return false;
+			}
+		}));
 	}
 
 	@Override
