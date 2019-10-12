@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.client.renderer.WitherCrusherRenderer;
+import teamhollow.deepercaverns.client.screen.BrightforgeScreen;
 import teamhollow.deepercaverns.client.screen.SoulforgeScreen;
 import teamhollow.deepercaverns.entity.WitherCrusherEntity;
 
@@ -19,6 +20,7 @@ public class ClientRegistrar
 	public static void onFMLClientSetup(FMLClientSetupEvent event)
 	{
 		RenderingRegistry.registerEntityRenderingHandler(WitherCrusherEntity.class, WitherCrusherRenderer::new);
+		ScreenManager.registerFactory(ContainerTypeRegistrar.BRIGHTFORGE, BrightforgeScreen::new);
 		ScreenManager.registerFactory(ContainerTypeRegistrar.SOULFORGE, SoulforgeScreen::new);
 	}
 }
