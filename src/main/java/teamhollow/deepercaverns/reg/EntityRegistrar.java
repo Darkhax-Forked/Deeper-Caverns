@@ -26,6 +26,7 @@ import teamhollow.deepercaverns.entity.ArcaneEntity;
 import teamhollow.deepercaverns.entity.GlurkerEntity;
 import teamhollow.deepercaverns.entity.IgneousGolemEntity;
 import teamhollow.deepercaverns.entity.RockGolemEntity;
+import teamhollow.deepercaverns.entity.SoulbrynBlockEntity;
 import teamhollow.deepercaverns.entity.SurgeflyEntity;
 import teamhollow.deepercaverns.entity.WitherCrusherEntity;
 
@@ -41,6 +42,7 @@ public class EntityRegistrar
 	public static final EntityType<GlurkerEntity> GLURKER = (EntityType<GlurkerEntity>)EntityType.Builder.<GlurkerEntity>create(GlurkerEntity::new, EntityClassification.MONSTER).size(0.6F, 1.95F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + GlurkerEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, GlurkerEntity.NAME));
 	public static final EntityType<IgneousGolemEntity> IGNEOUS_GOLEM = (EntityType<IgneousGolemEntity>)EntityType.Builder.<IgneousGolemEntity>create(IgneousGolemEntity::new, EntityClassification.MONSTER).immuneToFire().size(1.25F, 2.5F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + IgneousGolemEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, IgneousGolemEntity.NAME));
 	public static final EntityType<RockGolemEntity> ROCK_GOLEM = (EntityType<RockGolemEntity>)EntityType.Builder.<RockGolemEntity>create(RockGolemEntity::new, EntityClassification.MONSTER).size(1.0F, 1.0F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + RockGolemEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, RockGolemEntity.NAME));
+	public static final EntityType<SoulbrynBlockEntity> SOULBRYN_BLOCK = (EntityType<SoulbrynBlockEntity>)EntityType.Builder.<SoulbrynBlockEntity>create(SoulbrynBlockEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new SoulbrynBlockEntity(world)).immuneToFire().size(0.98F, 0.98F).build(DeeperCaverns.PREFIX + SoulbrynBlockEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, SoulbrynBlockEntity.NAME));
 	public static final EntityType<SurgeflyEntity> SURGEFLY = (EntityType<SurgeflyEntity>)EntityType.Builder.<SurgeflyEntity>create(SurgeflyEntity::new, EntityClassification.MONSTER).immuneToFire().size(3.5F, 1.5F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + SurgeflyEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, SurgeflyEntity.NAME));
 	public static final EntityType<WitherCrusherEntity> WITHER_CRUSHER = (EntityType<WitherCrusherEntity>)EntityType.Builder.<WitherCrusherEntity>create(WitherCrusherEntity::new, EntityClassification.MONSTER).immuneToFire().size(1.5F, 3.3F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + WitherCrusherEntity.NAME).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, WitherCrusherEntity.NAME));
 
@@ -51,6 +53,7 @@ public class EntityRegistrar
 		event.getRegistry().register(GLURKER);
 		event.getRegistry().register(IGNEOUS_GOLEM);
 		event.getRegistry().register(ROCK_GOLEM);
+		event.getRegistry().register(SOULBRYN_BLOCK);
 		event.getRegistry().register(SURGEFLY);
 		event.getRegistry().register(WITHER_CRUSHER);
 

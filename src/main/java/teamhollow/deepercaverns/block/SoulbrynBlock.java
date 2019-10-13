@@ -1,19 +1,18 @@
 package teamhollow.deepercaverns.block;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.Explosion;
-import net.minecraft.world.Explosion.Mode;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.event.ForgeEventFactory;
-import teamhollow.deepercaverns.misc.SoulbrynExplosion;
+import teamhollow.deepercaverns.entity.SoulbrynBlockEntity;
 
 public class SoulbrynBlock extends Block
 {
@@ -30,7 +29,7 @@ public class SoulbrynBlock extends Block
 			if(!player.isCreative())
 				player.getHeldItem(hand).shrink(1);
 
-			world.getPendingBlockTicks().scheduleTick(pos, this, 80);
+			explode(world, pos);
 			return true;
 		}
 
@@ -38,18 +37,35 @@ public class SoulbrynBlock extends Block
 	}
 
 	@Override
-	public void tick(BlockState state, World world, BlockPos pos, Random random)
+	public void onExplosionDestroy(World world, BlockPos pos, Explosion explosion)
 	{
-		Explosion explosion = new SoulbrynExplosion(world, pos, 5);
+		explode(world, pos);
+	}
 
-		if(ForgeEventFactory.onExplosionStart(world, explosion))
-			return;
+	@Override
+	public void onProjectileCollision(World world, BlockState state, BlockRayTraceResult hit, Entity projectile)
+	{
+		if(!world.isRemote && projectile instanceof AbstractArrowEntity)
+		{
+			if(((AbstractArrowEntity)projectile).isBurning())
+				explode(world, hit.getPos());
+		}
+	}
 
-		explosion.doExplosionA();
-		explosion.doExplosionB(true);
-		world.createExplosion(null, null, pos.getX(), pos.getY(), pos.getZ(), 12, true, Mode.NONE);
+	@Override
+	public boolean canDropFromExplosion(BlockState state, IBlockReader world, BlockPos pos, Explosion explosion)
+	{
+		return false;
+	}
 
-		if(world.getBlockState(pos).getBlock() == this)
+	private void explode(World world, BlockPos pos)
+	{
+		if(!world.isRemote)
+		{
+			SoulbrynBlockEntity entity = new SoulbrynBlockEntity(world, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D);
+
 			world.removeBlock(pos, false);
+			world.addEntity(entity);
+		}
 	}
 }
