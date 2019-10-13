@@ -1,10 +1,20 @@
 {
-    "variants": {
-        "": [
-            { "model": "deepercaverns:block/soulstone" },
-            { "model": "deepercaverns:block/soulstone", "y": 90 },
-            { "model": "deepercaverns:block/soulstone", "y": 180 },
-            { "model": "deepercaverns:block/soulstone", "y": 270 }
-        ]
-    }
+	"variants": {
+		"": [
+			{
+				"model": "deepercaverns:block/soulstone"
+			},
+			{
+				"model": "deepercaverns:block/soulstone_mirrored"
+			},
+			{
+				"model": "deepercaverns:block/soulstone",
+				"y": 180
+			},
+			{
+				"model": "deepercaverns:block/soulstone_mirrored",
+				"y": 180
+			}
+		]
+	}
 }
