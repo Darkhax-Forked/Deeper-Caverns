@@ -17,6 +17,8 @@
     "entity.deepercaverns.rock_golem": "Rock Golem",
     "entity.deepercaverns.surgefly": "Surgefly",
     "entity.deepercaverns.wither_crusher": "Wither Crusher",
+    
+    "fluid.deepercaverns.soul_essence": "Soul Essence",
 
     "item.deepercaverns.arcane_spawn_egg": "Arcane Spawn Egg",
     "item.deepercaverns.brimstone_powder": "Brimstone Powder",
@@ -56,6 +58,7 @@
     "item.deepercaverns.refined_soul": "Refined Soul",
     "item.deepercaverns.rock_golem_spawn_egg": "Rock Golem Spawn Egg",
     "item.deepercaverns.soulbryn": "Soulbryn",
+    "item.deepercaverns.soul_essence_bucket": "Soul Essence Bucket",
     "item.deepercaverns.surgefly_spawn_egg": "Surgefly Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
 

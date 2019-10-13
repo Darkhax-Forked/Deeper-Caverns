@@ -3,6 +3,7 @@ package teamhollow.deepercaverns;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
+import teamhollow.deepercaverns.reg.FluidRegistrar;
 import teamhollow.deepercaverns.reg.ItemRegistrar;
 
 @Mod(DeeperCaverns.MODID)
@@ -18,11 +19,12 @@ public class DeeperCaverns {
 		}
 	};
 
-	public static DeeperCaverns getInstance() {
-		return instance;
-	}
-
 	public DeeperCaverns() {
 		instance = this;
+		FluidRegistrar.init();
+	}
+
+	public static DeeperCaverns getInstance() {
+		return instance;
 	}
 }
