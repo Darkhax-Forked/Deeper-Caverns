@@ -1,12 +1,12 @@
 package teamhollow.deepercaverns;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import teamhollow.deepercaverns.reg.FluidRegistrar;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import teamhollow.deepercaverns.reg.ItemRegistrar;
 
 @Mod(DeeperCaverns.MODID)
@@ -23,10 +23,6 @@ public class DeeperCaverns {
 			return new ItemStack(ItemRegistrar.ARCANE_SPAWN_EGG);
 		}
 	};
-
-	public static DeeperCaverns getInstance() {
-		return instance;
-	}
 
 	public DeeperCaverns() {
 		instance = this;
