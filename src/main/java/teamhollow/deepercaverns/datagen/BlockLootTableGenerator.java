@@ -27,6 +27,7 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 	{
 		lootTables.put(BlockRegistrar.BRIGHTFORGE, createStandardBlockLootTable(BlockRegistrar.BRIGHTFORGE));
 		lootTables.put(BlockRegistrar.BRIMSTONE, createStandardBlockLootTable(BlockRegistrar.BRIMSTONE));
+		lootTables.put(BlockRegistrar.DENSE_OBSIDIAN, createStandardBlockLootTable(BlockRegistrar.DENSE_OBSIDIAN));
 		lootTables.put(BlockRegistrar.GLOWSTONE_LANTERN, createStandardBlockLootTable(BlockRegistrar.GLOWSTONE_LANTERN));
 		lootTables.put(BlockRegistrar.ONYX_ORE, LootTable.builder()
 				.addLootPool(LootPool.builder()
