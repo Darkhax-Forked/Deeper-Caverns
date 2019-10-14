@@ -1,7 +1,5 @@
 package teamhollow.deepercaverns.world.generation;
 
-import mcp.MethodsReturnNonnullByDefault;
-
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.Util;
@@ -21,6 +19,8 @@ import net.minecraft.world.spawner.WorldEntitySpawner;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+import mcp.MethodsReturnNonnullByDefault;
+
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class DeeperCavernsChunkGenerator extends NoiseChunkGenerator<DeeperCavernsGenerationSettings> {
@@ -33,7 +33,7 @@ public class DeeperCavernsChunkGenerator extends NoiseChunkGenerator<DeeperCaver
 		}
 	});
 
-	public static final int SURFACE_LEVEL = 61;
+	public static final int SURFACE_LEVEL = 61; //125
 	public static final int SEA_LEVEL = SURFACE_LEVEL + 2;
 
 	private final OctavesNoiseGenerator depthNoise;
@@ -58,13 +58,124 @@ public class DeeperCavernsChunkGenerator extends NoiseChunkGenerator<DeeperCaver
 	@Override
 	protected void func_222548_a(double[] noise, int chunkX, int chunkZ) {
 		// TODO replace with our own noise generator
-		double coordinateScale = 684.412;
-		double heightScale = 684.412;
-		double extraCoordinateScale = 8.555149841308594;
-		double extraHeightScale = 4.277574920654297;
-		int slideDividend = 3;
-		int slideTooBigUpperBound = -10;
+
+		/*
+		double coordinateScale = 684.412 * 2; // end = *2
+		double heightScale = 684.412 * 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16; // nether = *8, also height of caves but more impactful?
+		 */
+		// Test conclusion: high caves, lots of space for sea, little "islands", if heightScale is lower, they become denser and larger.
+		// Suggested next test: very low values
+
+		/*
+		double coordinateScale = 684.412 / 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 / 2; // end = *2
+		double extraHeightScale = 4.277574920654297 / 16; // nether = *8, also height of caves but more impactful?
+		 */
+		// Test conclusion: very high caves, almost entirely pillars
+
+		/*
+		double coordinateScale = 684.412 * 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 / 16; // nether = *8, also height of caves but more impactful?
+		*/
+		// Test conclusion: narrow pillars
+
+		/*
+		double coordinateScale = 684.412 * 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16; // nether = *8, also height of caves but more impactful?
+		 */
+		// Test conclusion: pillars with plateaus
+
+		/*
+		double coordinateScale = 684.412 / 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 / 16 / 2; // nether = *8, also height of caves but more impactful?
+		*/
+		// Test conclusion: very large lakes, very narrow pillars, maze of pillars
+
+		/*
+		double coordinateScale = 684.412 / 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16 * 2; // nether = *8, also height of caves but more impactful?
+		 */
+		// Test conclusion: huge lakes, large plateaus, not much height between plateaus
+
+		/*
+		double coordinateScale = 684.412 / 2; // end = *2
+		double heightScale = 684.412 * 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16 * 2; // nether = *8, also height of caves but more impactful?
+		*/
+		//	Test conclusion: large plateaus, very little height
+
+		/*
+		double coordinateScale = 684.412 / 2; // end = *2
+		double heightScale = 684.412; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16 * 2; // nether = *8, also height of caves but more impactful?
+		*/
+		// Test conclusion: a little bit more height between plateaus? more layers of plateaus
+
+		/*
+		double coordinateScale = 684.412 / 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16 * 2; // nether = *8, also height of caves but more impactful?
+		 */
+		// Test conclusion: definitely more plateaus layered on top of each other
+
+		/*
+		double coordinateScale = 684.412 / 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16 * 16; // nether = *8, also height of caves but more impactful?
+		 */
+		// Test conclusion: little to no effect?
+
+		/*
+		double coordinateScale = 684.412 * 2; // end = *2
+		double heightScale = 684.412 / 16; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594 * 2; // end = *2
+		double extraHeightScale = 4.277574920654297 * 16 * 16; // nether = *8, also height of caves but more impactful?
+		 */
+		// Test conclusion: larger plateaus
+
+		// TODO figure out good values
+		double coordinateScale = 684.412; // end = *2
+		double heightScale = 684.412 * 3; // nether = *3, height of caves
+		double extraCoordinateScale = 8.555149841308594; // end = *2
+		double extraHeightScale = 4.277574920654297 * 8; // nether = *8, also height of caves but more impactful?
+
+		int slideDividend = 3; // end: 64
+		int slideTooBigUpperBound = -10; // end: -3000
 		func_222546_a(noise, chunkX, chunkZ, coordinateScale, heightScale, extraCoordinateScale, extraHeightScale, slideDividend, slideTooBigUpperBound);
+		//DeeperCaverns.LOGGER.debug(chunkX + " " + chunkZ + " => " + Arrays.toString(noise));
+	}
+
+	private double lerp(double firstValue, double secondValue, double alpha) {
+		return (1 - alpha) * firstValue + alpha * (secondValue - firstValue);
+	}
+
+	private double lerp(double firstValue, double secondValue, int index, int lerpStart, int lerpEnd) {
+		if (index < lerpStart) return firstValue;
+		if (index > lerpEnd) return secondValue;
+		double distanceFromStart = index - lerpStart;
+		double alpha = distanceFromStart / (lerpEnd - lerpStart);
+		return lerp(firstValue, secondValue, alpha);
+	}
+
+	private int clamp(long value, int lowerBound, int higherBound) {
+		if (value > higherBound) return higherBound;
+		if (value < lowerBound) return lowerBound;
+		return (int) value;
 	}
 
 	/**
@@ -73,12 +184,38 @@ public class DeeperCavernsChunkGenerator extends NoiseChunkGenerator<DeeperCaver
 	@Override
 	protected double func_222545_a(double x, double z, int index) {
 		// TODO unsupported with custom noise generator
-		double d0 = 8.5D;
-		double yOffset = ((double) index - (d0 + x * d0 / 8.0 * 4.0)) * 12.0 * 128.0 / 256.0 / z;
+		double magicValue = 8.5;
+		double yOffset = (index - (magicValue + x * magicValue / 2)) * 6 / z;
 		if (yOffset < 0.0D) {
 			yOffset *= 4.0D;
 		}
-		return yOffset;
+
+		double mergeStartY = 176;
+		double mergeEndY = 240;
+		int mergeStartNoiseY = clamp(Math.round(mergeStartY / 8), 0, 32);
+		int mergeEndNoiseY = clamp(Math.round(mergeEndY / 8), 0, 32);
+		//DeeperCaverns.LOGGER.debug("{x, z}: " + x + " " + z + ", index: " + index + " => " + interpolation);
+		return lerp(yOffset, heightmap[index], index, mergeStartNoiseY, mergeEndNoiseY);
+	}
+
+	private final double[] heightmap = generateHeightmap();
+
+	private double[] generateHeightmap() {
+		double[] heightmap = new double[noiseSizeY()];
+
+		for (int y = 0; y < noiseSizeY(); y++) {
+			heightmap[y] = 2 * Math.cos((y / (double) noiseSizeY()) * 6 * Math.PI);
+			double value = y;
+			if (y > noiseSizeY() / 2) {
+				value = noiseSizeY() - 1 - y;
+			}
+			if (value < 4) {
+				value = 4 - value;
+				heightmap[y] -= value * value * value * 10;
+			}
+		}
+
+		return heightmap;
 	}
 
 	/**

@@ -1,10 +1,5 @@
 package teamhollow.deepercaverns.world.dimension.biolayer;
 
-import mcp.MethodsReturnNonnullByDefault;
-import teamhollow.deepercaverns.world.biome.provider.DeeperCavernsBiomeProviderTypes;
-import teamhollow.deepercaverns.world.generation.DeeperCavernsChunkGeneratorTypes;
-import teamhollow.deepercaverns.world.generation.DeeperCavernsGenerationSettings;
-
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -18,6 +13,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
+
+import mcp.MethodsReturnNonnullByDefault;
+import teamhollow.deepercaverns.world.biome.biolayer.BiolayerBiomes.SpawnEntryGroups;
+import teamhollow.deepercaverns.world.biome.provider.DeeperCavernsBiomeProviderTypes;
+import teamhollow.deepercaverns.world.generation.DeeperCavernsChunkGeneratorTypes;
+import teamhollow.deepercaverns.world.generation.DeeperCavernsGenerationSettings;
+import teamhollow.deepercaverns.world.generation.layertype.BiolayerLayerType;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -34,7 +36,12 @@ public class BiolayerDimension extends Dimension {
 		DeeperCavernsGenerationSettings settings = DeeperCavernsChunkGeneratorTypes.DEEPER_CAVERNS.createSettings();
 		settings.setDefaultBlock(Blocks.NETHERRACK.getDefaultState());
 		settings.setDefaultFluid(Blocks.LAVA.getDefaultState());
-		return DeeperCavernsChunkGeneratorTypes.DEEPER_CAVERNS.create(world, DeeperCavernsBiomeProviderTypes.BIOLAYER.create(DeeperCavernsBiomeProviderTypes.BIOLAYER.createSettings()), settings);
+
+		return DeeperCavernsChunkGeneratorTypes.DEEPER_CAVERNS.create(world, DeeperCavernsBiomeProviderTypes.BIOLAYER.create(
+						DeeperCavernsBiomeProviderTypes.BIOLAYER.createSettings()
+										.setBiomes(SpawnEntryGroups.SURFACE.getEntryValuesList())
+										.setBiomeResolver(BiolayerLayerType.INSTANCE.make(getSeed()))
+		), settings);
 	}
 
 	@Nullable
@@ -74,5 +81,10 @@ public class BiolayerDimension extends Dimension {
 	@OnlyIn(Dist.CLIENT)
 	public boolean doesXZShowFog(int x, int z) {
 		return true;
+	}
+
+	@Override
+	public double getMovementFactor() {
+		return 64; // TODO properly test and balance this
 	}
 }
