@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -19,26 +20,23 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.EmptyHandler;
-import teamhollow.deepercaverns.DCTags;
-import teamhollow.deepercaverns.block.SoulforgeBlock;
-import teamhollow.deepercaverns.container.SoulforgeContainer;
-import teamhollow.deepercaverns.recipe.SoulforgeRecipe;
+import teamhollow.deepercaverns.container.BrightforgeContainer;
+import teamhollow.deepercaverns.recipe.BrightforgeRecipe;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.TileEntityTypeRegistrar;
 
-public class SoulforgeTileEntity extends TileEntity implements INamedContainerProvider, ITickableTileEntity
+public class BrightforgeTileEntity extends TileEntity implements INamedContainerProvider, ITickableTileEntity
 {
-	private final LazyOptional<IItemHandler> leftInputItemHandler = LazyOptional.of(this::createItemHandler);
-	private final LazyOptional<IItemHandler> rightInputItemHandler = LazyOptional.of(this::createItemHandler);
+	private final LazyOptional<IItemHandler> inputItemHandler = LazyOptional.of(this::createItemHandler);
 	private final LazyOptional<IItemHandler> fuelItemHandler = LazyOptional.of(this::createFuelItemHandler);
 	private final LazyOptional<IItemHandler> outputItemHandler = LazyOptional.of(this::createItemHandler);
 	private int burnTime;
 	private int cookTime;
 	private int cookTimeNeeded;
 
-	public SoulforgeTileEntity()
+	public BrightforgeTileEntity()
 	{
-		super(TileEntityTypeRegistrar.SOULFORGE);
+		super(TileEntityTypeRegistrar.BRIGHTFORGE);
 	}
 
 	@Override
@@ -52,9 +50,9 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 
 		ItemStack fuelStack = getFuelStack();
 
-		if(isBurning() || (!fuelStack.isEmpty() && !getLeftStack().isEmpty() && !getRightStack().isEmpty()))
+		if(isBurning() || !fuelStack.isEmpty() && !getInputStack().isEmpty())
 		{
-			SoulforgeRecipe recipe = SoulforgeRecipe.getMatchingRecipe(getLeftStack(), getRightStack());
+			BrightforgeRecipe recipe = BrightforgeRecipe.getMatchingRecipe(getInputStack());
 
 			if(!isBurning() && canSmelt(recipe))
 			{
@@ -127,9 +125,9 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 		return 200;
 	}
 
-	private boolean canSmelt(SoulforgeRecipe recipe)
+	private boolean canSmelt(BrightforgeRecipe recipe)
 	{
-		if(!getLeftStack().isEmpty() && !getRightStack().isEmpty() && recipe != null)
+		if(!getInputStack().isEmpty() && recipe != null)
 		{
 			ItemStack recipeOutput = recipe.getOutput();
 
@@ -151,12 +149,11 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 		else return false;
 	}
 
-	private void updatePostProcessing(SoulforgeRecipe recipe)
+	private void updatePostProcessing(BrightforgeRecipe recipe)
 	{
 		if(recipe != null && canSmelt(recipe))
 		{
-			ItemStack leftStack = getLeftStack();
-			ItemStack rightStack = getRightStack();
+			ItemStack leftStack = getInputStack();
 			ItemStack recipeOutput = recipe.getOutput();
 			ItemStack currentOutput = getOutputStack();
 
@@ -166,7 +163,6 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 				currentOutput.grow(recipeOutput.getCount());
 
 			leftStack.shrink(1);
-			rightStack.shrink(1);
 		}
 	}
 
@@ -178,8 +174,7 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 		burnTime = tag.getInt("BurnTime");
 		cookTime = tag.getInt("CookTime");
 		cookTimeNeeded = tag.getInt("CookTimeNeeded");
-		leftInputItemHandler.ifPresent(h -> ((ItemStackHandler)h).deserializeNBT(tag.getCompound("LeftInputSlot")));
-		rightInputItemHandler.ifPresent(h -> ((ItemStackHandler)h).deserializeNBT(tag.getCompound("RightInputSlot")));
+		inputItemHandler.ifPresent(h -> ((ItemStackHandler)h).deserializeNBT(tag.getCompound("InputSlot")));
 		fuelItemHandler.ifPresent(h -> ((ItemStackHandler)h).deserializeNBT(tag.getCompound("FuelSlot")));
 		outputItemHandler.ifPresent(h -> ((ItemStackHandler)h).deserializeNBT(tag.getCompound("OutputSlot")));
 	}
@@ -190,8 +185,7 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 		tag.putInt("BurnTime", burnTime);
 		tag.putInt("CookTime", cookTime);
 		tag.putInt("CookTimeNeeded", cookTimeNeeded);
-		leftInputItemHandler.ifPresent(h -> tag.put("LeftInputSlot", ((ItemStackHandler)h).serializeNBT()));
-		rightInputItemHandler.ifPresent(h -> tag.put("RightInputSlot", ((ItemStackHandler)h).serializeNBT()));
+		inputItemHandler.ifPresent(h -> tag.put("InputSlot", ((ItemStackHandler)h).serializeNBT()));
 		fuelItemHandler.ifPresent(h -> tag.put("FuelSlot", ((ItemStackHandler)h).serializeNBT()));
 		outputItemHandler.ifPresent(h -> tag.put("OutputSlot", ((ItemStackHandler)h).serializeNBT()));
 		return super.write(tag);
@@ -202,14 +196,10 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 	{
 		if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
 		{
-			Direction facing = getBlockState().get(SoulforgeBlock.HORIZONTAL_FACING);
-
-			if(side == facing || side == facing.getOpposite())
+			if(side.getHorizontalIndex() != -1)
 				return fuelItemHandler.cast();
-			else if(side == facing.rotateY())
-				return leftInputItemHandler.cast();
-			else if(side == facing.rotateYCCW())
-				return rightInputItemHandler.cast();
+			else if(side == Direction.UP)
+				return inputItemHandler.cast();
 			else if(side == Direction.DOWN)
 				return outputItemHandler.cast();
 		}
@@ -222,8 +212,7 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 	{
 		super.remove();
 
-		leftInputItemHandler.ifPresent(h -> Block.spawnAsEntity(world, pos, h.getStackInSlot(0)));
-		rightInputItemHandler.ifPresent(h -> Block.spawnAsEntity(world, pos, h.getStackInSlot(0)));
+		inputItemHandler.ifPresent(h -> Block.spawnAsEntity(world, pos, h.getStackInSlot(0)));
 		fuelItemHandler.ifPresent(h -> Block.spawnAsEntity(world, pos, h.getStackInSlot(0)));
 		outputItemHandler.ifPresent(h -> Block.spawnAsEntity(world, pos, h.getStackInSlot(0)));
 	}
@@ -231,33 +220,23 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 	@Override
 	public Container createMenu(int windowId, PlayerInventory playerInv, PlayerEntity player)
 	{
-		return new SoulforgeContainer(windowId, playerInv, pos);
+		return new BrightforgeContainer(windowId, playerInv, pos);
 	}
 
 	@Override
 	public ITextComponent getDisplayName()
 	{
-		return new TranslationTextComponent(BlockRegistrar.SOULFORGE.getTranslationKey());
+		return new TranslationTextComponent(BlockRegistrar.BRIGHTFORGE.getTranslationKey());
 	}
 
-	public ItemStack getLeftStack()
+	public ItemStack getInputStack()
 	{
-		return leftInputItemHandler.orElse(EmptyHandler.INSTANCE).getStackInSlot(0);
+		return inputItemHandler.orElse(EmptyHandler.INSTANCE).getStackInSlot(0);
 	}
 
-	public void setLeftStack(ItemStack stack)
+	public void setInputStack(ItemStack stack)
 	{
-		leftInputItemHandler.ifPresent(h -> ((ItemStackHandler)h).setStackInSlot(0, stack));
-	}
-
-	public ItemStack getRightStack()
-	{
-		return rightInputItemHandler.orElse(EmptyHandler.INSTANCE).getStackInSlot(0);
-	}
-
-	public void setRightStack(ItemStack stack)
-	{
-		rightInputItemHandler.ifPresent(h -> ((ItemStackHandler)h).setStackInSlot(0, stack));
+		inputItemHandler.ifPresent(h -> ((ItemStackHandler)h).setStackInSlot(0, stack));
 	}
 
 	public ItemStack getFuelStack()
@@ -286,7 +265,7 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 			@Override
 			protected void onContentsChanged(int slot)
 			{
-				SoulforgeTileEntity.this.markDirty();
+				BrightforgeTileEntity.this.markDirty();
 			}
 		};
 	}
@@ -297,13 +276,13 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack)
 			{
-				return stack.getItem().isIn(DCTags.Items.FUEL_SOULFORGE);
+				return stack.getItem() == Items.GLOWSTONE;
 			}
 
 			@Override
 			protected void onContentsChanged(int slot)
 			{
-				SoulforgeTileEntity.this.markDirty();
+				BrightforgeTileEntity.this.markDirty();
 			}
 		};
 	}

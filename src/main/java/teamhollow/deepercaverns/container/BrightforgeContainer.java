@@ -1,7 +1,5 @@
 package teamhollow.deepercaverns.container;
 
-import javax.annotation.Nonnull;
-
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -12,20 +10,19 @@ import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-import teamhollow.deepercaverns.block.SoulforgeBlock;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.ContainerTypeRegistrar;
-import teamhollow.deepercaverns.tileentity.SoulforgeTileEntity;
+import teamhollow.deepercaverns.tileentity.BrightforgeTileEntity;
 
-public class SoulforgeContainer extends Container
+public class BrightforgeContainer extends Container
 {
-	public final SoulforgeTileEntity te;
+	public final BrightforgeTileEntity te;
 
-	public SoulforgeContainer(int windowId, PlayerInventory playerInv, BlockPos pos)
+	public BrightforgeContainer(int windowId, PlayerInventory playerInv, BlockPos pos)
 	{
-		super(ContainerTypeRegistrar.SOULFORGE, windowId);
+		super(ContainerTypeRegistrar.BRIGHTFORGE, windowId);
 
-		te = (SoulforgeTileEntity)playerInv.player.world.getTileEntity(pos);
+		te = (BrightforgeTileEntity)playerInv.player.world.getTileEntity(pos);
 
 		for(int i = 0; i < 3; i++)
 		{
@@ -40,18 +37,15 @@ public class SoulforgeContainer extends Container
 			addSlot(new Slot(playerInv, i, 8 + i * 18, 142));
 		}
 
-		Direction facing = te.getBlockState().get(SoulforgeBlock.HORIZONTAL_FACING);
-
-		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.rotateY()).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 28, 17)));
-		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.rotateYCCW()).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 64, 17)));
-		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 46, 53) {
+		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.UP).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 56, 17)));
+		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.NORTH).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 56, 53) {
 			@Override
-			public boolean isItemValid(@Nonnull ItemStack stack)
+			public boolean isItemValid(ItemStack stack)
 			{
 				return h.isItemValid(0, stack);
 			}
 		}));
-		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 128, 35) {
+		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 116, 35) {
 			@Override
 			public boolean isItemValid(ItemStack stack)
 			{
@@ -69,6 +63,6 @@ public class SoulforgeContainer extends Container
 	@Override
 	public boolean canInteractWith(PlayerEntity player)
 	{
-		return isWithinUsableDistance(IWorldPosCallable.of(te.getWorld(), te.getPos()), player, BlockRegistrar.SOULFORGE);
+		return isWithinUsableDistance(IWorldPosCallable.of(te.getWorld(), te.getPos()), player, BlockRegistrar.BRIGHTFORGE);
 	}
 }

@@ -4,16 +4,15 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
-import teamhollow.deepercaverns.DeeperCaverns;
-import teamhollow.deepercaverns.container.SoulforgeContainer;
-import teamhollow.deepercaverns.tileentity.SoulforgeTileEntity;
+import teamhollow.deepercaverns.container.BrightforgeContainer;
+import teamhollow.deepercaverns.tileentity.BrightforgeTileEntity;
 
-public class SoulforgeScreen extends ContainerScreen<SoulforgeContainer>
+public class BrightforgeScreen extends ContainerScreen<BrightforgeContainer>
 {
-	public static final ResourceLocation TEXTURE = new ResourceLocation(DeeperCaverns.MODID, "textures/gui/container/soulforge.png");
-	private final SoulforgeTileEntity te;
+	public static final ResourceLocation TEXTURE = new ResourceLocation("minecraft", "textures/gui/container/furnace.png");
+	private final BrightforgeTileEntity te;
 
-	public SoulforgeScreen(SoulforgeContainer screenContainer, PlayerInventory inv, ITextComponent title)
+	public BrightforgeScreen(BrightforgeContainer screenContainer, PlayerInventory inv, ITextComponent title)
 	{
 		super(screenContainer, inv, title);
 
@@ -34,12 +33,12 @@ public class SoulforgeScreen extends ContainerScreen<SoulforgeContainer>
 		{
 			int k = getBurnLeftScaled();
 
-			blit(guiLeft + 46, guiTop + 36 + 12 - k, 176, 12 - k, 14, k + 1);
+			blit(guiLeft + 56, guiTop + 36 + 12 - k, 176, 12 - k, 14, k + 1);
 		}
 
 		int l = getCookProgressionScaled();
 
-		blit(guiLeft + 90, guiTop + 34, 176, 14, l + 1, 16);
+		blit(guiLeft + 79, guiTop + 34, 176, 14, l + 1, 16);
 	}
 
 	@Override
