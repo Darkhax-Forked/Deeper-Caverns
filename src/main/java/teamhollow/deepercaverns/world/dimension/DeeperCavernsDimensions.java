@@ -33,8 +33,10 @@ public class DeeperCavernsDimensions {
 	public static class ForgeEvents {
 		@SubscribeEvent
 		public static void registerDimensions(RegisterDimensionsEvent event) {
-			//			if (DimensionType.byName(BIOLAYER_NAME) == null)
-			BIOLAYER_TYPE = DimensionManager.registerDimension(BIOLAYER_NAME, BIOLAYER, null, false);
+			if(!DimensionManager.getRegistry().containsKey(BIOLAYER_NAME))
+				BIOLAYER_TYPE = DimensionManager.registerDimension(BIOLAYER_NAME, BIOLAYER, null, false);
+			else
+				BIOLAYER_TYPE = DimensionManager.getRegistry().getValue(BIOLAYER_NAME).orElse(null);
 		}
 	}
 }
