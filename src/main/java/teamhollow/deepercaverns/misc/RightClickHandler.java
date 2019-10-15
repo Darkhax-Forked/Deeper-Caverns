@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.block.BiolayerPortalBlock;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
+import teamhollow.deepercaverns.world.dimension.DeeperCavernsDimensions;
 
 @EventBusSubscriber(modid=DeeperCaverns.MODID)
 public class RightClickHandler
@@ -28,8 +29,9 @@ public class RightClickHandler
 			BlockPos pos = event.getPos();
 			BlockState state = world.getBlockState(pos);
 			PlayerEntity player = event.getPlayer();
+			boolean isValidDim = world.dimension.getType() == DimensionType.OVERWORLD || world.dimension.getType() == DeeperCavernsDimensions.BIOLAYER_TYPE;
 
-			if(state.getBlock() == BlockRegistrar.CHISELED_OBSIDIAN && world.dimension.getType() == DimensionType.OVERWORLD && ((BiolayerPortalBlock)BlockRegistrar.BIOLAYER_PORTAL).trySpawnPortal(world, pos.offset(event.getFace())) && player.isCreative())
+			if(isValidDim && state.getBlock() == BlockRegistrar.CHISELED_OBSIDIAN && ((BiolayerPortalBlock)BlockRegistrar.BIOLAYER_PORTAL).trySpawnPortal(world, pos.offset(event.getFace())) && player.isCreative())
 			{
 				stack.damageItem(1, player, p -> p.sendBreakAnimation(event.getHand()));
 				player.swingArm(event.getHand());

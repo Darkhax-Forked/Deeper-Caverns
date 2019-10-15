@@ -28,6 +28,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
@@ -107,7 +108,12 @@ public class BiolayerPortalBlock extends Block
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity)
 	{
 		if(!entity.isPassenger() && !entity.isBeingRidden() && entity.isNonBoss())
-			entity.changeDimension(DeeperCavernsDimensions.BIOLAYER_TYPE);
+		{
+			if(world.dimension.getType() == DeeperCavernsDimensions.BIOLAYER_TYPE)
+				entity.changeDimension(DimensionType.OVERWORLD);
+			else if(world.dimension.getType() == DimensionType.OVERWORLD)
+				entity.changeDimension(DeeperCavernsDimensions.BIOLAYER_TYPE);
+		}
 	}
 
 	@Override
