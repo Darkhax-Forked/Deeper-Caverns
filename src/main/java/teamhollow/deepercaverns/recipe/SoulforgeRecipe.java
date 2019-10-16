@@ -101,9 +101,9 @@ public class SoulforgeRecipe
 		else if(RECIPES.containsKey(recipe.registryName))
 			throw new IllegalStateException(String.format("Soulforge recipe with registry name %s already exists!", recipe.registryName.toString()));
 		else if((recipe.left == null || recipe.left.hasNoMatchingItems()))
-			throw new IllegalStateException("Soulforge recipe's left ingredient cannot be null and cannot have no matching stacks!");
+			throw new IllegalStateException("Soulforge recipe's left input cannot be null and cannot have no matching stacks!");
 		else if((recipe.right == null || recipe.right.hasNoMatchingItems()))
-			throw new IllegalStateException("Soulforge recipe's right ingredient cannot be null and cannot have no matching stacks!");
+			throw new IllegalStateException("Soulforge recipe's right input cannot be null and cannot have no matching stacks!");
 		else if(recipe.output == null || recipe.output.isEmpty())
 			throw new IllegalStateException("Soulforge recipe's output cannot be null or empty!");
 

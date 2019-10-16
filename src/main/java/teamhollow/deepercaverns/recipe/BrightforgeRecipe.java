@@ -76,11 +76,11 @@ public class BrightforgeRecipe
 		return output;
 	}
 
-	public static BrightforgeRecipe getMatchingRecipe(ItemStack left)
+	public static BrightforgeRecipe getMatchingRecipe(ItemStack input)
 	{
 		for(BrightforgeRecipe recipe : RECIPES.values())
 		{
-			if(recipe.getInput().test(left))
+			if(recipe.getInput().test(input))
 				return recipe;
 		}
 
@@ -90,15 +90,15 @@ public class BrightforgeRecipe
 	public static void register(BrightforgeRecipe recipe)
 	{
 		if(recipe.registryName == null)
-			throw new IllegalStateException("Soulforge recipe cannot have null registry name!");
+			throw new IllegalStateException("Brightforge recipe cannot have null registry name!");
 		else if(recipe.registryName.getNamespace().equals("minecraft"))
-			throw new IllegalStateException("Soulforge recipe cannot be registered under the \"minecraft\" namespace!");
+			throw new IllegalStateException("Brightforge recipe cannot be registered under the \"minecraft\" namespace!");
 		else if(RECIPES.containsKey(recipe.registryName))
-			throw new IllegalStateException(String.format("Soulforge recipe with registry name %s already exists!", recipe.registryName.toString()));
+			throw new IllegalStateException(String.format("Brightforge recipe with registry name %s already exists!", recipe.registryName.toString()));
 		else if((recipe.input == null || recipe.input.hasNoMatchingItems()))
-			throw new IllegalStateException("Soulforge recipe's left ingredient cannot be null and cannot have no matching stacks!");
+			throw new IllegalStateException("Brightforge recipe's input cannot be null and cannot have no matching stacks!");
 		else if(recipe.output == null || recipe.output.isEmpty())
-			throw new IllegalStateException("Soulforge recipe's output cannot be null or empty!");
+			throw new IllegalStateException("Brightforge recipe's output cannot be null or empty!");
 
 		RECIPES.put(recipe.getRegistryName(), recipe);
 	}
