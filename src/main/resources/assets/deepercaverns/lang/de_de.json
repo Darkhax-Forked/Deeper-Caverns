@@ -64,5 +64,7 @@
     "item.deepercaverns.surgefly_spawn_egg": "Sturmfliege-Spawn-Ei",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",
 
-    "itemGroup.deepercaverns": "Deeper Caverns"
+    "itemGroup.deepercaverns": "Deeper Caverns",
+    
+    "jei.category.deepercaverns.soul_essence_cauldron": "Kessel mit Seelenessenz"
 }

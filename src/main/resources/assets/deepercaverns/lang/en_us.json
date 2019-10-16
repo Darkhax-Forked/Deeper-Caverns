@@ -64,5 +64,7 @@
     "item.deepercaverns.surgefly_spawn_egg": "Surgefly Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
 
-    "itemGroup.deepercaverns": "Deeper Caverns"
+    "itemGroup.deepercaverns": "Deeper Caverns",
+    
+    "jei.category.deepercaverns.soul_essence_cauldron": "Cauldron w/ Soul Essence"
 }
