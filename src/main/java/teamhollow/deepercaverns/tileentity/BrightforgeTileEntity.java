@@ -20,6 +20,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.EmptyHandler;
+import teamhollow.deepercaverns.block.BrightforgeBlock;
 import teamhollow.deepercaverns.container.BrightforgeContainer;
 import teamhollow.deepercaverns.recipe.BrightforgeRecipe;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
@@ -94,7 +95,10 @@ public class BrightforgeTileEntity extends TileEntity implements INamedContainer
 			cookTime = MathHelper.clamp(cookTime - 2, 0, cookTimeNeeded);
 
 		if(isBurningAtStartOfTick != isBurning())
+		{
 			shouldMarkDirty = true;
+			world.setBlockState(pos, world.getBlockState(pos).with(BrightforgeBlock.LIT, isBurning()), 3);
+		}
 
 		if(shouldMarkDirty)
 			markDirty();

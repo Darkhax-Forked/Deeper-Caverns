@@ -96,7 +96,10 @@ public class SoulforgeTileEntity extends TileEntity implements INamedContainerPr
 			cookTime = MathHelper.clamp(cookTime - 2, 0, cookTimeNeeded);
 
 		if(isBurningAtStartOfTick != isBurning())
+		{
 			shouldMarkDirty = true;
+			world.setBlockState(pos, world.getBlockState(pos).with(SoulforgeBlock.LIT, isBurning()), 3);
+		}
 
 		if(shouldMarkDirty)
 			markDirty();

@@ -2,7 +2,7 @@
     "parent": "block/orientable",
     "textures": {
         "top": "deepercaverns:block/soulforge_top",
-        "front": "deepercaverns:block/soulforge_front",
+        "front": "deepercaverns:block/soulforge_front_on",
         "side": "deepercaverns:block/soulforge_side"
     }
 }

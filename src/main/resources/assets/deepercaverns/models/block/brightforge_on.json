@@ -2,7 +2,7 @@
     "parent": "block/orientable",
     "textures": {
         "top": "deepercaverns:block/brightforge_top",
-        "front": "deepercaverns:block/brightforge_front",
+        "front": "deepercaverns:block/brightforge_front_on",
         "side": "deepercaverns:block/brightforge_side"
     }
 }

@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -21,12 +22,13 @@ import teamhollow.deepercaverns.tileentity.SoulforgeTileEntity;
 public class SoulforgeBlock extends Block
 {
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
 	public SoulforgeBlock(Properties properties)
 	{
 		super(properties);
 
-		setDefaultState(stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
+		setDefaultState(stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(LIT, false));
 	}
 
 	@Override
@@ -66,6 +68,6 @@ public class SoulforgeBlock extends Block
 	@Override
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
 	{
-		builder.add(HORIZONTAL_FACING);
+		builder.add(HORIZONTAL_FACING, LIT);
 	}
 }

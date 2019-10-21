@@ -1,8 +1,12 @@
 {
     "variants": {
-        "facing=north": { "model": "deepercaverns:block/soulforge" },
-        "facing=east": { "model": "deepercaverns:block/soulforge", "y": 90 },
-        "facing=south": { "model": "deepercaverns:block/soulforge", "y": 180 },
-        "facing=west": { "model": "deepercaverns:block/soulforge", "y": 270 }
+        "facing=north,lit=false": { "model": "deepercaverns:block/soulforge" },
+        "facing=south,lit=false": { "model": "deepercaverns:block/soulforge", "y": 180 },
+        "facing=west,lit=false":  { "model": "deepercaverns:block/soulforge", "y": 270 },
+        "facing=east,lit=false":  { "model": "deepercaverns:block/soulforge", "y": 90 },
+        "facing=north,lit=true": { "model": "deepercaverns:block/soulforge_on" },
+        "facing=south,lit=true": { "model": "deepercaverns:block/soulforge_on", "y": 180 },
+        "facing=west,lit=true":  { "model": "deepercaverns:block/soulforge_on", "y": 270 },
+        "facing=east,lit=true":  { "model": "deepercaverns:block/soulforge_on", "y": 90 }
     }
 }
