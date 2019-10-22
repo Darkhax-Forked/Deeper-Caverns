@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "deepercaverns:chiseled_obsidian"
+  },
+  "result": "minecraft:obsidian",
+  "count": 1
+}

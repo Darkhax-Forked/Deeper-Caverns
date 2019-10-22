@@ -15,6 +15,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import teamhollow.deepercaverns.DeeperCaverns;
+import teamhollow.deepercaverns.block.BiolayerPortalBlock;
 import teamhollow.deepercaverns.block.BrightforgeBlock;
 import teamhollow.deepercaverns.block.SoulEssenceCauldronBlock;
 import teamhollow.deepercaverns.block.SoulbrynBlock;
@@ -24,8 +25,10 @@ import teamhollow.deepercaverns.util.RegistryUtil;
 @EventBusSubscriber(modid = DeeperCaverns.MODID, bus = Bus.MOD)
 @ObjectHolder(DeeperCaverns.MODID)
 public class BlockRegistrar {
+	public static final Block BIOLAYER_PORTAL = RegistryUtil.injected();
 	public static final Block BRIGHTFORGE = RegistryUtil.injected();
 	public static final Block BRIMSTONE = RegistryUtil.injected();
+	public static final Block CHISELED_OBSIDIAN = RegistryUtil.injected();
 	public static final Block GLOWSTONE_LANTERN = RegistryUtil.injected();
 	public static final Block ONYX_ORE = RegistryUtil.injected();
 	public static final Block PALE_GLASS = RegistryUtil.injected();
@@ -36,13 +39,13 @@ public class BlockRegistrar {
 	public static final Block SOULGLASS = RegistryUtil.injected();
 	public static final Block SOUL_ORE = RegistryUtil.injected();
 	public static final Block SOULSTONE = RegistryUtil.injected();
-	public static final Block DENSE_OBSIDIAN = RegistryUtil.injected(); // TODO portal
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
+		event.getRegistry().register(new BiolayerPortalBlock(Block.Properties.from(Blocks.NETHER_PORTAL)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "biolayer_portal")));
 		event.getRegistry().register(withItemBlock(new BrightforgeBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.5F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brightforge"))));
 		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone"))));
-		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(100.0F, 2400.0F))).setRegistryName("dense_obsidian")); // TODO check if properties are right (currently obsidian's properties * 2)
+		event.getRegistry().register(withItemBlock(new Block(Block.Properties.from(Blocks.OBSIDIAN)).setRegistryName("chiseled_obsidian")));
 		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).lightValue(15)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_lantern"))));
 		event.getRegistry().register(withItemBlock(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_ore"))));
 		event.getRegistry().register(withItemBlock(new GlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass"))));

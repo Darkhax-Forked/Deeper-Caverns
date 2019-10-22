@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "deepercaverns:dense_obsidian"
+          "name": "deepercaverns:chiseled_obsidian"
         }
       ],
       "conditions": [

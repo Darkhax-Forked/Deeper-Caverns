@@ -9,11 +9,14 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.data.SingleItemRecipeBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.Tags;
+import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.ItemRegistrar;
 
@@ -97,6 +100,14 @@ public class RecipeGenerator extends RecipeProvider
 		//standard armor recipes
 		addStandardArmorRecipes(consumer, ItemRegistrar.GHOSTSOUL_INGOT, ItemRegistrar.GHOSTSOUL_HELMET, ItemRegistrar.GHOSTSOUL_CHESTPLATE, ItemRegistrar.GHOSTSOUL_LEGGINGS, ItemRegistrar.GHOSTSOUL_BOOTS);
 		addStandardArmorRecipes(consumer, ItemRegistrar.GLOWSTONE_CRYSTAL, ItemRegistrar.GLOWSTONE_CRYSTAL_HELMET, ItemRegistrar.GLOWSTONE_CRYSTAL_CHESTPLATE, ItemRegistrar.GLOWSTONE_CRYSTAL_LEGGINGS, ItemRegistrar.GLOWSTONE_CRYSTAL_BOOTS);
+
+		//stonecutting recipes
+		SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(Blocks.OBSIDIAN), BlockRegistrar.CHISELED_OBSIDIAN)
+		.addCriterion("has_obsidian", hasItem(Tags.Items.OBSIDIAN))
+		.build(consumer, new ResourceLocation(DeeperCaverns.MODID, "chiseled_obsidian_from_obsidian_stonecutting"));
+		SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(BlockRegistrar.CHISELED_OBSIDIAN), Blocks.OBSIDIAN)
+		.addCriterion("has_obsidian", hasItem(Tags.Items.OBSIDIAN))
+		.build(consumer, new ResourceLocation(DeeperCaverns.MODID, "obsidian_from_chiseled_obsidian_stonecutting"));
 	}
 
 	private void addStandardToolRecipes(Consumer<IFinishedRecipe> consumer, Item material, Item axe, Item hoe, Item pickaxe, Item shovel, Item sword)

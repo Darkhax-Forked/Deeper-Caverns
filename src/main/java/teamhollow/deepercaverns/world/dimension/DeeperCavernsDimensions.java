@@ -1,9 +1,5 @@
 package teamhollow.deepercaverns.world.dimension;
 
-import teamhollow.deepercaverns.DeeperCaverns;
-import teamhollow.deepercaverns.util.RegistryUtil;
-import teamhollow.deepercaverns.world.dimension.biolayer.BiolayerDimension;
-
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.DimensionManager;
@@ -14,6 +10,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
+import teamhollow.deepercaverns.DeeperCaverns;
+import teamhollow.deepercaverns.util.RegistryUtil;
+import teamhollow.deepercaverns.world.dimension.biolayer.BiolayerDimension;
 
 public class DeeperCavernsDimensions {
 	private static final String biolayerId = DeeperCaverns.MODID + ":" + "biolayer";
@@ -34,8 +33,10 @@ public class DeeperCavernsDimensions {
 	public static class ForgeEvents {
 		@SubscribeEvent
 		public static void registerDimensions(RegisterDimensionsEvent event) {
-			if (DimensionType.byName(BIOLAYER_NAME) == null)
+			if(!DimensionManager.getRegistry().containsKey(BIOLAYER_NAME))
 				BIOLAYER_TYPE = DimensionManager.registerDimension(BIOLAYER_NAME, BIOLAYER, null, false);
+			else
+				BIOLAYER_TYPE = DimensionManager.getRegistry().getValue(BIOLAYER_NAME).orElse(null);
 		}
 	}
 }
