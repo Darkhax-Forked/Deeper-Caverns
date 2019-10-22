@@ -11,6 +11,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.pattern.BlockPattern;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.EnumProperty;
@@ -28,11 +29,12 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import teamhollow.deepercaverns.misc.BiolayerPortalHelper;
+import teamhollow.deepercaverns.misc.BiolayerTeleporter;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
-import teamhollow.deepercaverns.world.dimension.DeeperCavernsDimensions;
 
 public class BiolayerPortalBlock extends Block
 {
@@ -107,12 +109,21 @@ public class BiolayerPortalBlock extends Block
 	@Override
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity)
 	{
-		if(!entity.isPassenger() && !entity.isBeingRidden() && entity.isNonBoss())
+		if(!world.isRemote && !entity.isPassenger() && !entity.isBeingRidden() && entity instanceof ServerPlayerEntity && entity.isSneaking())
 		{
-			if(world.dimension.getType() == DeeperCavernsDimensions.BIOLAYER_TYPE)
-				entity.changeDimension(DimensionType.OVERWORLD);
-			else if(world.dimension.getType() == DimensionType.OVERWORLD)
-				entity.changeDimension(DeeperCavernsDimensions.BIOLAYER_TYPE);
+			ServerPlayerEntity player = (ServerPlayerEntity)entity;
+			ServerWorld destWorld = BiolayerTeleporter.teleport(entity);
+
+			if(destWorld != null)
+			{
+				BiolayerPortalHelper helper = BiolayerPortalHelper.getOrCreate(destWorld);
+
+				if(!helper.placeInPortal(player, player.rotationYaw))
+				{
+					helper.makePortal(player);
+					helper.placeInPortal(player, player.rotationYaw);
+				}
+			}
 		}
 	}
 
