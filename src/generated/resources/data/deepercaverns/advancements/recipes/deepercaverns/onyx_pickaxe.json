@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_onyx_ingot": {
+    "has_onyx_gem": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "deepercaverns:onyx_ingot"
+            "item": "deepercaverns:onyx_gem"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_onyx_ingot",
+      "has_onyx_gem",
       "has_the_recipe"
     ]
   ]

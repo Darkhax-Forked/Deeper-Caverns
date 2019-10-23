@@ -7,10 +7,10 @@ import teamhollow.deepercaverns.reg.ItemRegistrar;
 public enum ItemTier implements IItemTier
 {
 	//all are the same as gold for now
-	CHALONITE(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.ONYX_INGOT)),
+	CHALONITE(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.ONYX_GEM)),
 	GLOWSTONE_CRYSTAL(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.GLOWSTONE_CRYSTAL)),
 	GHOSTSOUL(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.GHOSTSOUL_INGOT)),
-	ONYX(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.ONYX_INGOT));
+	ONYX(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.ONYX_GEM));
 
 	private final int harvestLevel;
 	private final int maxUses;

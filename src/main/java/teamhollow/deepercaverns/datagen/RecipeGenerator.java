@@ -90,10 +90,10 @@ public class RecipeGenerator extends RecipeProvider
 		.patternLine("O")
 		.patternLine("S")
 		.patternLine("F")
-		.key('O', ItemRegistrar.ONYX_INGOT)
+		.key('O', ItemRegistrar.ONYX_GEM)
 		.key('S', Items.STICK)
 		.key('F', Items.FEATHER)
-		.addCriterion("has_onyx_ingot", hasItem(ItemRegistrar.ONYX_INGOT))
+		.addCriterion("has_onyx_gem", hasItem(ItemRegistrar.ONYX_GEM))
 		.build(consumer);
 		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.CHALONITE_SWORD)
 		.patternLine("C")
@@ -107,7 +107,7 @@ public class RecipeGenerator extends RecipeProvider
 		//standard tool recipes
 		addStandardToolRecipes(consumer, ItemRegistrar.GHOSTSOUL_INGOT, ItemRegistrar.GHOSTSOUL_AXE, ItemRegistrar.GHOSTSOUL_HOE, ItemRegistrar.GHOSTSOUL_PICKAXE, ItemRegistrar.GHOSTSOUL_SHOVEL, ItemRegistrar.GHOSTSOUL_SWORD);
 		addStandardToolRecipes(consumer, ItemRegistrar.GLOWSTONE_CRYSTAL, ItemRegistrar.GLOWSTONE_CRYSTAL_AXE, ItemRegistrar.GLOWSTONE_CRYSTAL_HOE, ItemRegistrar.GLOWSTONE_CRYSTAL_PICKAXE, ItemRegistrar.GLOWSTONE_CRYSTAL_SHOVEL, ItemRegistrar.GLOWSTONE_CRYSTAL_SWORD);
-		addStandardToolRecipes(consumer, ItemRegistrar.ONYX_INGOT, ItemRegistrar.ONYX_AXE, ItemRegistrar.ONYX_HOE, ItemRegistrar.ONYX_PICKAXE, ItemRegistrar.ONYX_SHOVEL, ItemRegistrar.ONYX_SWORD);
+		addStandardToolRecipes(consumer, ItemRegistrar.ONYX_GEM, ItemRegistrar.ONYX_AXE, ItemRegistrar.ONYX_HOE, ItemRegistrar.ONYX_PICKAXE, ItemRegistrar.ONYX_SHOVEL, ItemRegistrar.ONYX_SWORD);
 
 		//standard armor recipes
 		addStandardArmorRecipes(consumer, ItemRegistrar.GHOSTSOUL_INGOT, ItemRegistrar.GHOSTSOUL_HELMET, ItemRegistrar.GHOSTSOUL_CHESTPLATE, ItemRegistrar.GHOSTSOUL_LEGGINGS, ItemRegistrar.GHOSTSOUL_BOOTS);

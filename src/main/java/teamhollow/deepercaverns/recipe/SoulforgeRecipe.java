@@ -18,9 +18,9 @@ public class SoulforgeRecipe
 	public static final Map<ResourceLocation,SoulforgeRecipe> RECIPES = new HashMap<>();
 
 	static {
-		register(new SoulforgeRecipe(ItemRegistrar.ONYX_INGOT, Items.QUARTZ, ItemRegistrar.CHALONITE_INGOT).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "chalonite_ingot")));
+		register(new SoulforgeRecipe(ItemRegistrar.ONYX_GEM, Items.QUARTZ, ItemRegistrar.CHALONITE_INGOT).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "chalonite_ingot")));
 		register(new SoulforgeRecipe(ItemRegistrar.REFINED_SOUL, ItemRegistrar.PALE_GLASS_SHARDS, ItemRegistrar.GHOSTSOUL_INGOT).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_ingot")));
-		register(new SoulforgeRecipe(BlockRegistrar.ONYX_ORE, BlockRegistrar.ONYX_ORE, new ItemStack(ItemRegistrar.ONYX_INGOT, 2)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_ingot")));
+		register(new SoulforgeRecipe(BlockRegistrar.ONYX_ORE, BlockRegistrar.ONYX_ORE, new ItemStack(ItemRegistrar.ONYX_GEM, 2)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_gem")));
 	}
 
 	private ResourceLocation registryName;
