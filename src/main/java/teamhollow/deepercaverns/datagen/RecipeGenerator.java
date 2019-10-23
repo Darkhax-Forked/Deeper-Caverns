@@ -52,6 +52,18 @@ public class RecipeGenerator extends RecipeProvider
 		.key('G', Blocks.GLOWSTONE)
 		.addCriterion("nether_entered", ChangeDimensionTrigger.Instance.changedDimensionTo(DimensionType.THE_NETHER))
 		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.PALE_GLASS_PANE)
+		.patternLine("GGG")
+		.patternLine("GGG")
+		.key('G', BlockRegistrar.PALE_GLASS)
+		.addCriterion("has_pale_glass", hasItem(BlockRegistrar.PALE_GLASS))
+		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.SOULGLASS_PANE)
+		.patternLine("GGG")
+		.patternLine("GGG")
+		.key('G', BlockRegistrar.SOULGLASS)
+		.addCriterion("has_soulglass", hasItem(BlockRegistrar.SOULGLASS))
+		.build(consumer);
 		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.SOULBRYN)
 		.patternLine("BSB")
 		.patternLine("SBS")

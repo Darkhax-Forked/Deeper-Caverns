@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_side",
+    "textures": {
+        "edge": "deepercaverns:block/soulglass_pane_top",
+        "pane": "deepercaverns:block/soulglass"
+    }
+}

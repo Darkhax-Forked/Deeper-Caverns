@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deepercaverns:pale_glass_pane"
+    ]
+  },
+  "criteria": {
+    "has_pale_glass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "deepercaverns:pale_glass"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deepercaverns:pale_glass_pane"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pale_glass",
+      "has_the_recipe"
+    ]
+  ]
+}

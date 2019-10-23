@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deepercaverns:soulglass_pane"
+    ]
+  },
+  "criteria": {
+    "has_soulglass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "deepercaverns:soulglass"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deepercaverns:soulglass_pane"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_soulglass",
+      "has_the_recipe"
+    ]
+  ]
+}

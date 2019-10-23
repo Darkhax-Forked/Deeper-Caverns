@@ -43,6 +43,12 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 										new ItemPredicate.Builder().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, IntBound.atLeast(1))))),
 								ItemLootEntry.builder(ItemRegistrar.PALE_GLASS_SHARDS)
 								.acceptCondition(SurvivesExplosion.builder())))));
+		lootTables.put(BlockRegistrar.PALE_GLASS_PANE, LootTable.builder()
+				.addLootPool(LootPool.builder()
+						.rolls(ConstantRange.of(1))
+						.addEntry(ItemLootEntry.builder(BlockRegistrar.PALE_GLASS_PANE))
+						.acceptCondition(MatchTool.builder(
+								new ItemPredicate.Builder().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, IntBound.atLeast(1)))))));
 		lootTables.put(BlockRegistrar.PALE_SAND, createStandardBlockLootTable(BlockRegistrar.PALE_SAND));
 		lootTables.put(BlockRegistrar.SOULBRYN_BLOCK, createStandardBlockLootTable(BlockRegistrar.SOULBRYN_BLOCK));
 		lootTables.put(BlockRegistrar.SOULFORGE, createStandardBlockLootTable(BlockRegistrar.SOULFORGE));
@@ -50,6 +56,12 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 				.addLootPool(LootPool.builder()
 						.rolls(ConstantRange.of(1))
 						.addEntry(ItemLootEntry.builder(BlockRegistrar.SOULGLASS))
+						.acceptCondition(MatchTool.builder(
+								new ItemPredicate.Builder().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, IntBound.atLeast(1)))))));
+		lootTables.put(BlockRegistrar.SOULGLASS_PANE, LootTable.builder()
+				.addLootPool(LootPool.builder()
+						.rolls(ConstantRange.of(1))
+						.addEntry(ItemLootEntry.builder(BlockRegistrar.SOULGLASS_PANE))
 						.acceptCondition(MatchTool.builder(
 								new ItemPredicate.Builder().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, IntBound.atLeast(1)))))));
 		lootTables.put(BlockRegistrar.SOUL_ORE, LootTable.builder()
