@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "deepercaverns:block/onyx_tiles",
+    "top": "deepercaverns:block/onyx_tiles",
+    "side": "deepercaverns:block/onyx_tiles"
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/template_wall_side",
+    "textures": {
+        "wall": "deepercaverns:block/onyx_tiles"
+    }
+}

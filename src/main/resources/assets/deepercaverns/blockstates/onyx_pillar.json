@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y": {"model": "deepercaverns:block/onyx_pillar"},
+    "axis=z": {"model": "deepercaverns:block/onyx_pillar", "x": 90},
+    "axis=x": {"model": "deepercaverns:block/onyx_pillar", "x": 90, "y": 90}
+  }
+}

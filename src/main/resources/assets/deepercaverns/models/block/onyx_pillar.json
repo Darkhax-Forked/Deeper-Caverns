@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "midnight:blocks/onyx_pillar_top",
+    "side": "midnight:blocks/onyx_pillar"
+  }
+}

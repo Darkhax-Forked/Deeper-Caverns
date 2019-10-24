@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "deepercaverns:block/onyx_tile_slab" },
+        "type=top": { "model": "deepercaverns:block/onyx_tile_slab_top" },
+        "type=double": { "model": "deepercaverns:block/onyx_tile" }
+    }
+}
