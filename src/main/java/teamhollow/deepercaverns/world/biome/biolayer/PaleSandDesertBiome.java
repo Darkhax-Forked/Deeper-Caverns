@@ -10,12 +10,13 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.LakesConfig;
 import net.minecraft.world.gen.feature.LiquidsConfig;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.LakeChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
-
+import teamhollow.deepercaverns.misc.CustomFillerBlockType;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.EntityRegistrar;
 import teamhollow.deepercaverns.world.generation.feature.DeeperCavernsBiomeFeatures;
@@ -24,10 +25,10 @@ import teamhollow.deepercaverns.world.generation.surfacebuilder.DeeperCavernsSur
 public class PaleSandDesertBiome extends Biome {
 	public PaleSandDesertBiome() {
 		this(new Biome.Builder().surfaceBuilder(SurfaceBuilder.DEFAULT, DeeperCavernsSurfaceBuilders.Config.PALE_SAND)
-						     .category(Category.NETHER)
-						     .depth(0.125F).scale(0.05F).temperature(2)
-						     .precipitation(RainType.NONE).downfall(0).waterColor(0x3f76e4).waterFogColor(0x50533)
-						     .parent(null));
+				.category(Category.NETHER)
+				.depth(0.125F).scale(0.05F).temperature(2)
+				.precipitation(RainType.NONE).downfall(0).waterColor(0x3f76e4).waterFogColor(0x50533)
+				.parent(null));
 	}
 
 	protected PaleSandDesertBiome(Biome.Builder builder) {
@@ -39,7 +40,8 @@ public class PaleSandDesertBiome extends Biome {
 		DeeperCavernsBiomeFeatures.addLavaWells(this, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICK_SLAB, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICKS, BlockRegistrar.PALE_SAND);
 		DeeperCavernsBiomeFeatures.addDryWells(this, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICK_SLAB, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICKS, BlockRegistrar.PALE_SAND);
 		addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.FOSSIL, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_PASSTHROUGH, new ChanceConfig(64 * 10000)));
-
+		addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(CustomFillerBlockType.SOULSTONE, BlockRegistrar.SOUL_ORE.getDefaultState(), 20), Placement.COUNT_RANGE, new CountRangeConfig(3, 0, 0, 118)));
+		addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(CustomFillerBlockType.SOULSTONE, BlockRegistrar.ONYX_ORE.getDefaultState(), 20), Placement.COUNT_RANGE, new CountRangeConfig(3, 0, 0, 118)));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityRegistrar.WITHER_CRUSHER, 1, 2, 5));
 	}
 }
