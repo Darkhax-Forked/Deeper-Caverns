@@ -2,6 +2,7 @@ package teamhollow.deepercaverns.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -9,6 +10,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import teamhollow.deepercaverns.DeeperCaverns;
+import teamhollow.deepercaverns.client.screen.BrightforgeScreen;
+import teamhollow.deepercaverns.client.screen.SoulforgeScreen;
 import teamhollow.deepercaverns.recipe.BrightforgeRecipe;
 import teamhollow.deepercaverns.recipe.SoulEssenceCauldronRecipe;
 import teamhollow.deepercaverns.recipe.SoulforgeRecipe;
@@ -45,6 +48,13 @@ public class JEICompat implements IModPlugin
 		registration.addRecipes(BrightforgeRecipe.RECIPES.values(), BRIGHTFORGE_RECIPES);
 		registration.addRecipes(SoulEssenceCauldronRecipe.RECIPES.values(), SOUL_ESSENCE_CAULDRON_RECIPES);
 		registration.addRecipes(SoulforgeRecipe.RECIPES.values(), SOULFORGE_RECIPES);
+	}
+
+	@Override
+	public void registerGuiHandlers(IGuiHandlerRegistration registration)
+	{
+		registration.addRecipeClickArea(BrightforgeScreen.class, 78, 32, 28, 23, BRIGHTFORGE_RECIPES);
+		registration.addRecipeClickArea(SoulforgeScreen.class, 89, 32, 28, 23, SOULFORGE_RECIPES);
 	}
 
 	@Override
