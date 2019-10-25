@@ -37,7 +37,7 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 		lootTables.put(BlockRegistrar.PALE_GLASS, LootTable.builder()
 				.addLootPool(LootPool.builder()
 						.rolls(ConstantRange.of(1))
-						.addEntry(AlternativesLootEntry.func_216149_a(
+						.addEntry(AlternativesLootEntry.builder(
 								ItemLootEntry.builder(BlockRegistrar.PALE_GLASS)
 								.acceptCondition(MatchTool.builder(
 										new ItemPredicate.Builder().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, IntBound.atLeast(1))))),
