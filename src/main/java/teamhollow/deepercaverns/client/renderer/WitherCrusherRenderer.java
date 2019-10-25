@@ -1,24 +1,27 @@
 package teamhollow.deepercaverns.client.renderer;
 
-import com.mojang.blaze3d.platform.GlStateManager;
-
+import net.minecraft.client.renderer.entity.BipedRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.WitherSkeletonRenderer;
-import net.minecraft.entity.monster.AbstractSkeletonEntity;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import teamhollow.deepercaverns.DeeperCaverns;
+import teamhollow.deepercaverns.client.model.WitherCrusherModel;
+import teamhollow.deepercaverns.entity.WitherCrusherEntity;
 
 @OnlyIn(Dist.CLIENT)
-public class WitherCrusherRenderer extends WitherSkeletonRenderer
+public class WitherCrusherRenderer extends BipedRenderer<WitherCrusherEntity,WitherCrusherModel>
 {
+	private static final ResourceLocation TEXTURE = new ResourceLocation(DeeperCaverns.MODID, "textures/entity/wither_crusher.png");
+
 	public WitherCrusherRenderer(EntityRendererManager renderManager)
 	{
-		super(renderManager);
+		super(renderManager, new WitherCrusherModel(), 0.5F);
 	}
 
 	@Override
-	protected void preRenderCallback(AbstractSkeletonEntity entity, float partialTickTime)
+	protected ResourceLocation getEntityTexture(WitherCrusherEntity entity)
 	{
-		GlStateManager.scalef(1.6F, 1.6F, 1.6F);
+		return TEXTURE;
 	}
 }
