@@ -18,7 +18,6 @@
     "block.deepercaverns.soulforge": "Soulforge",
     "block.deepercaverns.soulglass": "Soulglass",
     "block.deepercaverns.soulglass_pane": "Soulglass Pane",
-    "block.deepercaverns.soul_ore": "Soul Ore",
     "block.deepercaverns.soulstone": "Soulstone",
 
     "entity.deepercaverns.arcane": "Arcane",
@@ -69,11 +68,10 @@
     "item.deepercaverns.onyx_leggings": "Onyx Leggings",
     "item.deepercaverns.onyx_boots": "Onyx Boots",
     "item.deepercaverns.pale_glass_shards": "Pale Glass Shards",
-    "item.deepercaverns.raw_soul": "Raw Soul",
-    "item.deepercaverns.refined_soul": "Refined Soul",
     "item.deepercaverns.rock_golem_spawn_egg": "Rock Golem Spawn Egg",
     "item.deepercaverns.soulbryn": "Soulbryn",
     "item.deepercaverns.soul_essence_bucket": "Soul Essence Bucket",
+    "item.deepercaverns.soul_ingot": "Soul Ingot",
     "item.deepercaverns.surgefly_spawn_egg": "Surgefly Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
 

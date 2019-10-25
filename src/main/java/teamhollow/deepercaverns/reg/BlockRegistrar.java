@@ -40,7 +40,6 @@ public class BlockRegistrar {
 	public static final Block SOULFORGE = RegistryUtil.injected();
 	public static final Block SOULGLASS = RegistryUtil.injected();
 	public static final Block SOULGLASS_PANE = RegistryUtil.injected();
-	public static final Block SOUL_ORE = RegistryUtil.injected();
 	public static final Block SOULSTONE = RegistryUtil.injected();
 
 	@SubscribeEvent
@@ -59,7 +58,6 @@ public class BlockRegistrar {
 		event.getRegistry().register(withItemBlock(new SoulforgeBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.5F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulforge"))));
 		event.getRegistry().register(withItemBlock(new CustomGlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulglass"))));
 		event.getRegistry().register(withItemBlock(new CustomPaneBlock(Block.Properties.from(Blocks.GLASS_PANE)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulglass_pane"))));
-		event.getRegistry().register(withItemBlock(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soul_ore"))));
 		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulstone"))));
 	}
 

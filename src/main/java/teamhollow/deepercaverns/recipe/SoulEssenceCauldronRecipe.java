@@ -7,15 +7,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
-import teamhollow.deepercaverns.DeeperCaverns;
-import teamhollow.deepercaverns.reg.ItemRegistrar;
 
 public class SoulEssenceCauldronRecipe
 {
 	public static final Map<ResourceLocation,SoulEssenceCauldronRecipe> RECIPES = new HashMap<>();
 
 	static {
-		register(new SoulEssenceCauldronRecipe(ItemRegistrar.RAW_SOUL, ItemRegistrar.REFINED_SOUL).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "refined_soul")));
+		//example:
+		//register(new SoulEssenceCauldronRecipe(Blocks.DIRT, Items.DIAMOND).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "dirt_to_diamond")));
 	}
 
 	private ResourceLocation registryName;

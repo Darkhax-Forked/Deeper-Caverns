@@ -12,7 +12,6 @@
     "block.deepercaverns.soulforge": "Seelenschmiede",
     "block.deepercaverns.soulglass": "Seelenglas",
     "block.deepercaverns.soulglass_pane": "Seelenglasscheibe",
-    "block.deepercaverns.soul_ore": "Seelenerz",
     "block.deepercaverns.soulstone": "Seelenstein",
 
     "entity.deepercaverns.arcane": "Arkane",
@@ -59,11 +58,10 @@
     "item.deepercaverns.onyx_shovel": "Onyxschaufel",
     "item.deepercaverns.onyx_sword": "Onyxschwert",
     "item.deepercaverns.pale_glass_shards": "Fahle Glasscherben",
-    "item.deepercaverns.raw_soul": "Rohe Seele",
-    "item.deepercaverns.refined_soul": "Verfeinerte Seele",
     "item.deepercaverns.rock_golem_spawn_egg": "Steingolem-Spawn-Ei",
     "item.deepercaverns.soulbryn": "Soulbryn",
     "item.deepercaverns.soul_essence_bucket": "Seelenessenzeimer",
+    "item.deepercaverns.soul_ingot": "Seelenbarren",
     "item.deepercaverns.surgefly_spawn_egg": "Sturmfliege-Spawn-Ei",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",
 

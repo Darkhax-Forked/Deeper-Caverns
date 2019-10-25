@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "deepercaverns:item/refined_soul"
+        "layer0": "deepercaverns:item/soul_ingot"
     }
 }

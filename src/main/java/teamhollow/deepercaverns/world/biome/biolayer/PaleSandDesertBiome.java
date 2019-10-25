@@ -40,7 +40,6 @@ public class PaleSandDesertBiome extends Biome {
 		DeeperCavernsBiomeFeatures.addLavaWells(this, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICK_SLAB, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICKS, BlockRegistrar.PALE_SAND);
 		DeeperCavernsBiomeFeatures.addDryWells(this, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICK_SLAB, DeeperCavernsSurfaceBuilders.BlockStates.NETHER_BRICKS, BlockRegistrar.PALE_SAND);
 		addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.FOSSIL, IFeatureConfig.NO_FEATURE_CONFIG, Placement.CHANCE_PASSTHROUGH, new ChanceConfig(64 * 10000)));
-		addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(CustomFillerBlockType.SOULSTONE, BlockRegistrar.SOUL_ORE.getDefaultState(), 20), Placement.COUNT_RANGE, new CountRangeConfig(3, 0, 0, 118)));
 		addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(CustomFillerBlockType.SOULSTONE, BlockRegistrar.ONYX_ORE.getDefaultState(), 20), Placement.COUNT_RANGE, new CountRangeConfig(3, 0, 0, 118)));
 		addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityRegistrar.WITHER_CRUSHER, 1, 2, 5));
 	}

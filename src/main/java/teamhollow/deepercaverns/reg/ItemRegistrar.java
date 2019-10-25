@@ -66,10 +66,9 @@ public class ItemRegistrar
 	public static final Item ONYX_SHOVEL = RegistryUtil.injected();
 	public static final Item ONYX_SWORD = RegistryUtil.injected();
 	public static final Item PALE_GLASS_SHARDS = RegistryUtil.injected();
-	public static final Item RAW_SOUL = RegistryUtil.injected();
-	public static final Item REFINED_SOUL = RegistryUtil.injected();
 	public static final Item ROCK_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item SOULBRYN = RegistryUtil.injected();
+	public static final Item SOUL_INGOT = RegistryUtil.injected();
 	public static final Item SURGEFLY_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item WITHER_CRUSHER_SPAWN_EGG = RegistryUtil.injected();
 
@@ -92,9 +91,8 @@ public class ItemRegistrar
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone_powder")));
 		event.getRegistry().register(new ArrowItem(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_arrow")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass_shards")));
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "raw_soul")));
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "refined_soul")));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulbryn")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soul_ingot")));
 		/*armor, tools, and their materials*/ //TODO: change tool values, currently they're like gold by default
 		//ghostsoul
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_ingot")));
