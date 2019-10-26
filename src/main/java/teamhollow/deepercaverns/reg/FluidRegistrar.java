@@ -28,7 +28,7 @@ public class FluidRegistrar
 	public static RegistryObject<FlowingFluid> SOUL_ESSENCE_FLOWING = FLUIDS.register("soul_essence_flowing", () -> new ForgeFlowingFluid.Flowing(FluidRegistrar.SOUL_ESSENCE_PROPERTIES));
 	public static RegistryObject<SoulEssenceFluidBlock> SOUL_ESSENCE_BLOCK = BLOCKS.register("soul_essence_fluid_block", () -> new SoulEssenceFluidBlock(SOUL_ESSENCE, Block.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(1.0F).noDrops()));
 	public static RegistryObject<Item> SOUL_ESSENCE_BUCKET = ITEMS.register("soul_essence_bucket", () -> new BucketItem(SOUL_ESSENCE, new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(DeeperCaverns.ITEM_GROUP)));
-	public static final Properties SOUL_ESSENCE_PROPERTIES = new Properties(SOUL_ESSENCE, SOUL_ESSENCE_FLOWING, FluidAttributes.builder(new ResourceLocation("minecraft:block/soul_sand"), new ResourceLocation("minecraft:block/soul_sand"))).bucket(SOUL_ESSENCE_BUCKET).block(SOUL_ESSENCE_BLOCK);
+	public static final Properties SOUL_ESSENCE_PROPERTIES = new Properties(SOUL_ESSENCE, SOUL_ESSENCE_FLOWING, FluidAttributes.builder(new ResourceLocation(DeeperCaverns.MODID, "block/soul_essence"), new ResourceLocation(DeeperCaverns.MODID, "block/soul_essence"))).bucket(SOUL_ESSENCE_BUCKET).block(SOUL_ESSENCE_BLOCK);
 
 	public static void init()
 	{
