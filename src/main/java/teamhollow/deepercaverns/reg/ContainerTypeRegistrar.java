@@ -1,7 +1,6 @@
 package teamhollow.deepercaverns.reg;
 
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,7 +22,7 @@ public class ContainerTypeRegistrar
 	@SubscribeEvent
 	public static void onRegisterContainerTypes(RegistryEvent.Register<ContainerType<?>> event)
 	{
-		event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> new BrightforgeContainer(windowId, inv, data.readBlockPos())).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brightforge")));
-		event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> new SoulforgeContainer(windowId, inv, data.readBlockPos())).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulforge")));
+		event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> new BrightforgeContainer(windowId, inv, data.readBlockPos())).setRegistryName("brightforge"));
+		event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> new SoulforgeContainer(windowId, inv, data.readBlockPos())).setRegistryName("soulforge"));
 	}
 }

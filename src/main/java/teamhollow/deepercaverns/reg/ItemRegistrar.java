@@ -16,7 +16,6 @@ import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.SwordItem;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -88,51 +87,51 @@ public class ItemRegistrar
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.SURGEFLY, 0xE9D700, 0xA98600));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.WITHER_CRUSHER, 0x333333, 0x999999));
 		/*random items*/
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone_powder")));
-		event.getRegistry().register(new ArrowItem(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_arrow")));
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass_shards")));
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulbryn")));
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soul_ingot")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("brimstone_powder"));
+		event.getRegistry().register(new ArrowItem(defaultItemProperties()).setRegistryName("onyx_arrow"));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("pale_glass_shards"));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("soulbryn"));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("soul_ingot"));
 		/*armor, tools, and their materials*/ //TODO: change tool values, currently they're like gold by default
 		//ghostsoul
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_ingot")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.HEAD, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_helmet")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.CHEST, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_chestplate")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.LEGS, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_leggings")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.FEET, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_boots")));
-		event.getRegistry().register(new SwordItem(ItemTier.GHOSTSOUL, 3, -2.4F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_sword")));
-		event.getRegistry().register(new ShovelItem(ItemTier.GHOSTSOUL, 1.5F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_shovel")));
-		event.getRegistry().register(new PickaxeItem(ItemTier.GHOSTSOUL, 1, -2.8F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_pickaxe")));
-		event.getRegistry().register(new AxeItem(ItemTier.GHOSTSOUL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_axe")));
-		event.getRegistry().register(new HoeItem(ItemTier.GHOSTSOUL, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "ghostsoul_hoe")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("ghostsoul_ingot"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.HEAD, defaultItemProperties()).setRegistryName("ghostsoul_helmet"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.CHEST, defaultItemProperties()).setRegistryName("ghostsoul_chestplate"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.LEGS, defaultItemProperties()).setRegistryName("ghostsoul_leggings"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.FEET, defaultItemProperties()).setRegistryName("ghostsoul_boots"));
+		event.getRegistry().register(new SwordItem(ItemTier.GHOSTSOUL, 3, -2.4F, defaultItemProperties()).setRegistryName("ghostsoul_sword"));
+		event.getRegistry().register(new ShovelItem(ItemTier.GHOSTSOUL, 1.5F, -3.0F, defaultItemProperties()).setRegistryName("ghostsoul_shovel"));
+		event.getRegistry().register(new PickaxeItem(ItemTier.GHOSTSOUL, 1, -2.8F, defaultItemProperties()).setRegistryName("ghostsoul_pickaxe"));
+		event.getRegistry().register(new AxeItem(ItemTier.GHOSTSOUL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName("ghostsoul_axe"));
+		event.getRegistry().register(new HoeItem(ItemTier.GHOSTSOUL, -3.0F, defaultItemProperties()).setRegistryName("ghostsoul_hoe"));
 		//glowstone crystal
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.HEAD, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_helmet")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.CHEST, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_chestplate")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.LEGS, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_leggings")));
-		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.FEET, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_boots")));
-		event.getRegistry().register(new SwordItem(ItemTier.GLOWSTONE_CRYSTAL, 3, -2.4F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_sword")));
-		event.getRegistry().register(new ShovelItem(ItemTier.GLOWSTONE_CRYSTAL, 1.5F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_shovel")));
-		event.getRegistry().register(new PickaxeItem(ItemTier.GLOWSTONE_CRYSTAL, 1, -2.8F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_pickaxe")));
-		event.getRegistry().register(new AxeItem(ItemTier.GLOWSTONE_CRYSTAL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_axe")));
-		event.getRegistry().register(new HoeItem(ItemTier.GLOWSTONE_CRYSTAL, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal_hoe")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("glowstone_crystal"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.HEAD, defaultItemProperties()).setRegistryName("glowstone_crystal_helmet"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.CHEST, defaultItemProperties()).setRegistryName("glowstone_crystal_chestplate"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.LEGS, defaultItemProperties()).setRegistryName("glowstone_crystal_leggings"));
+		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.FEET, defaultItemProperties()).setRegistryName("glowstone_crystal_boots"));
+		event.getRegistry().register(new SwordItem(ItemTier.GLOWSTONE_CRYSTAL, 3, -2.4F, defaultItemProperties()).setRegistryName("glowstone_crystal_sword"));
+		event.getRegistry().register(new ShovelItem(ItemTier.GLOWSTONE_CRYSTAL, 1.5F, -3.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_shovel"));
+		event.getRegistry().register(new PickaxeItem(ItemTier.GLOWSTONE_CRYSTAL, 1, -2.8F, defaultItemProperties()).setRegistryName("glowstone_crystal_pickaxe"));
+		event.getRegistry().register(new AxeItem(ItemTier.GLOWSTONE_CRYSTAL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_axe"));
+		event.getRegistry().register(new HoeItem(ItemTier.GLOWSTONE_CRYSTAL, -3.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_hoe"));
 		//onyx
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_gem")));
-		event.getRegistry().register(new SwordItem(ItemTier.ONYX, 3, -2.4F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_sword")));
-		event.getRegistry().register(new ShovelItem(ItemTier.ONYX, 1.5F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_shovel")));
-		event.getRegistry().register(new PickaxeItem(ItemTier.ONYX, 1, -2.8F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_pickaxe")));
-		event.getRegistry().register(new AxeItem(ItemTier.ONYX, 6.0F, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_axe")));
-		event.getRegistry().register(new HoeItem(ItemTier.ONYX, -3.0F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_hoe")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("onyx_gem"));
+		event.getRegistry().register(new SwordItem(ItemTier.ONYX, 3, -2.4F, defaultItemProperties()).setRegistryName("onyx_sword"));
+		event.getRegistry().register(new ShovelItem(ItemTier.ONYX, 1.5F, -3.0F, defaultItemProperties()).setRegistryName("onyx_shovel"));
+		event.getRegistry().register(new PickaxeItem(ItemTier.ONYX, 1, -2.8F, defaultItemProperties()).setRegistryName("onyx_pickaxe"));
+		event.getRegistry().register(new AxeItem(ItemTier.ONYX, 6.0F, -3.0F, defaultItemProperties()).setRegistryName("onyx_axe"));
+		event.getRegistry().register(new HoeItem(ItemTier.ONYX, -3.0F, defaultItemProperties()).setRegistryName("onyx_hoe"));
 		//chalonite
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "chalonite_ingot")));
-		event.getRegistry().register(new SwordItem(ItemTier.CHALONITE, 3, -2.4F, defaultItemProperties()).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "chalonite_sword")));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("chalonite_ingot"));
+		event.getRegistry().register(new SwordItem(ItemTier.CHALONITE, 3, -2.4F, defaultItemProperties()).setRegistryName("chalonite_sword"));
 		blocksWithItem = null;
 	}
 
 	private static SpawnEggItem makeSpawnEgg(EntityType<?> type, int mainEggColor, int secondaryEggColor)
 	{
 		return (SpawnEggItem)new SpawnEggItem(type, mainEggColor, secondaryEggColor, defaultItemProperties())
-				.setRegistryName(new ResourceLocation(DeeperCaverns.MODID, type.getRegistryName().getPath() + "_spawn_egg"));
+				.setRegistryName(type.getRegistryName().getPath() + "_spawn_egg");
 	}
 
 	private static Item.Properties defaultItemProperties()

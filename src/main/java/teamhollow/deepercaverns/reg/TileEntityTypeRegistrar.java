@@ -1,7 +1,6 @@
 package teamhollow.deepercaverns.reg;
 
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -22,7 +21,7 @@ public class TileEntityTypeRegistrar
 	@SubscribeEvent
 	public static void onRegisterTileEntityTypes(RegistryEvent.Register<TileEntityType<?>> event)
 	{
-		event.getRegistry().register(TileEntityType.Builder.create(BrightforgeTileEntity::new, BlockRegistrar.BRIGHTFORGE).build(null).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brightforge")));
-		event.getRegistry().register(TileEntityType.Builder.create(SoulforgeTileEntity::new, BlockRegistrar.SOULFORGE).build(null).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulforge")));
+		event.getRegistry().register(TileEntityType.Builder.create(BrightforgeTileEntity::new, BlockRegistrar.BRIGHTFORGE).build(null).setRegistryName("brightforge"));
+		event.getRegistry().register(TileEntityType.Builder.create(SoulforgeTileEntity::new, BlockRegistrar.SOULFORGE).build(null).setRegistryName("soulforge"));
 	}
 }

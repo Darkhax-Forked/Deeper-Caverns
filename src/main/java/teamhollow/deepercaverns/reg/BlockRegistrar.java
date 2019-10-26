@@ -7,7 +7,6 @@ import net.minecraft.block.SandBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -44,21 +43,21 @@ public class BlockRegistrar {
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(new BiolayerPortalBlock(Block.Properties.from(Blocks.NETHER_PORTAL)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "biolayer_portal")));
-		event.getRegistry().register(withItemBlock(new BrightforgeBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.5F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brightforge"))));
-		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone"))));
+		event.getRegistry().register(new BiolayerPortalBlock(Block.Properties.from(Blocks.NETHER_PORTAL)).setRegistryName("biolayer_portal"));
+		event.getRegistry().register(withItemBlock(new BrightforgeBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.5F)).setRegistryName("brightforge")));
+		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)).setRegistryName("brimstone")));
 		event.getRegistry().register(withItemBlock(new Block(Block.Properties.from(Blocks.OBSIDIAN)).setRegistryName("chiseled_obsidian")));
-		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).lightValue(15)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_lantern"))));
-		event.getRegistry().register(withItemBlock(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_ore"))));
-		event.getRegistry().register(withItemBlock(new CustomGlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass"))));
-		event.getRegistry().register(withItemBlock(new CustomPaneBlock(Block.Properties.from(Blocks.GLASS_PANE)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_glass_pane"))));
-		event.getRegistry().register(withItemBlock(new SandBlock(0x5B4538, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "pale_sand"))));
-		event.getRegistry().register(withItemBlock(new SoulbrynBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F, 6.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulbryn_block"))));
-		event.getRegistry().register(new SoulEssenceCauldronBlock(Block.Properties.from(Blocks.CAULDRON).lootFrom(Blocks.CAULDRON)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soul_essence_cauldron")));
-		event.getRegistry().register(withItemBlock(new SoulforgeBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.5F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulforge"))));
-		event.getRegistry().register(withItemBlock(new CustomGlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulglass"))));
-		event.getRegistry().register(withItemBlock(new CustomPaneBlock(Block.Properties.from(Blocks.GLASS_PANE)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulglass_pane"))));
-		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulstone"))));
+		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS).lightValue(15)).setRegistryName("glowstone_lantern")));
+		event.getRegistry().register(withItemBlock(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("onyx_ore")));
+		event.getRegistry().register(withItemBlock(new CustomGlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("pale_glass")));
+		event.getRegistry().register(withItemBlock(new CustomPaneBlock(Block.Properties.from(Blocks.GLASS_PANE)).setRegistryName("pale_glass_pane")));
+		event.getRegistry().register(withItemBlock(new SandBlock(0x5B4538, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)).setRegistryName("pale_sand")));
+		event.getRegistry().register(withItemBlock(new SoulbrynBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F, 6.0F)).setRegistryName("soulbryn_block")));
+		event.getRegistry().register(new SoulEssenceCauldronBlock(Block.Properties.from(Blocks.CAULDRON).lootFrom(Blocks.CAULDRON)).setRegistryName("soul_essence_cauldron"));
+		event.getRegistry().register(withItemBlock(new SoulforgeBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.5F)).setRegistryName("soulforge")));
+		event.getRegistry().register(withItemBlock(new CustomGlassBlock(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("soulglass")));
+		event.getRegistry().register(withItemBlock(new CustomPaneBlock(Block.Properties.from(Blocks.GLASS_PANE)).setRegistryName("soulglass_pane")));
+		event.getRegistry().register(withItemBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F)).setRegistryName("soulstone")));
 	}
 
 	private static Block withItemBlock(Block block) {
