@@ -26,7 +26,7 @@ public class ArcaneEntity extends MonsterEntity
 	@Override
 	public void registerGoals()
 	{
-		goalSelector.addGoal(7, new RandomWalkingGoal(this, 1.0D));
+		goalSelector.addGoal(1, new RandomWalkingGoal(this, 0.75D));
 		goalSelector.addGoal(8, new LookAtGoal(this, LivingEntity.class, 8.0F));
 		goalSelector.addGoal(8, new LookRandomlyGoal(this));
 		targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true));
@@ -72,5 +72,6 @@ public class ArcaneEntity extends MonsterEntity
 		super.registerAttributes();
 
 		getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+		getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 }
