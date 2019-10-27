@@ -20,6 +20,8 @@
     "block.deepercaverns.soulglass_pane": "Soulglass Pane",
     "block.deepercaverns.soulstone": "Soulstone",
 
+	"death.attack.deepercaverns.arcane_sucks_life": "An Arcane sucked the life out of %s.",
+
     "entity.deepercaverns.arcane": "Arcane",
     "entity.deepercaverns.glurker": "Glurker",
     "entity.deepercaverns.igneous_golem": "Igneous Golem",
