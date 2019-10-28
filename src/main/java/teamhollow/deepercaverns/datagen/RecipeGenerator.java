@@ -95,7 +95,7 @@ public class RecipeGenerator extends RecipeProvider
 		.key('F', Items.FEATHER)
 		.addCriterion("has_onyx_gem", hasItem(ItemRegistrar.ONYX_GEM))
 		.build(consumer);
-		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.CHALONITE_SWORD)
+		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.CHALONITE_SWORD_ONYX)
 		.patternLine("C")
 		.patternLine("C")
 		.patternLine("S")
