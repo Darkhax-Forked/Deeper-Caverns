@@ -13,10 +13,17 @@ import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.world.World;
+import teamhollow.deepercaverns.entity.ai.SuckLifeGoal;
+import teamhollow.deepercaverns.entity.ai.ThrowEntityGoal;
 
 public class ArcaneEntity extends MonsterEntity
 {
 	public static final String NAME = "arcane";
+	private static final IParticleData PARTICLE_DATA = ParticleTypes.EFFECT;
+	private static final int PARTICLE_COLOR = 0x2F0076;
+	private static final float PARTICLE_R = (PARTICLE_COLOR >> 16 & 255) / 255.0F;
+	private static final float PARTICLE_G = (PARTICLE_COLOR >> 8 & 255) / 255.0F;
+	private static final float PARTICLE_B = (PARTICLE_COLOR >> 0 & 255) / 255.0F;
 
 	public ArcaneEntity(EntityType<? extends ArcaneEntity> type, World world)
 	{
@@ -26,7 +33,9 @@ public class ArcaneEntity extends MonsterEntity
 	@Override
 	public void registerGoals()
 	{
-		goalSelector.addGoal(7, new RandomWalkingGoal(this, 1.0D));
+		goalSelector.addGoal(3, new ThrowEntityGoal(this));
+		goalSelector.addGoal(8, new SuckLifeGoal(this, 6, 8, 0.25F, 0.33F));
+		goalSelector.addGoal(4, new RandomWalkingGoal(this, 0.8D));
 		goalSelector.addGoal(8, new LookAtGoal(this, LivingEntity.class, 8.0F));
 		goalSelector.addGoal(8, new LookRandomlyGoal(this));
 		targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true));
@@ -39,13 +48,6 @@ public class ArcaneEntity extends MonsterEntity
 
 		if(world.isRemote)
 		{
-			IParticleData data = ParticleTypes.EFFECT;
-
-			int particleColor = 0x2F0076;
-			float r = (particleColor >> 16 & 255) / 255.0F;
-			float g = (particleColor >> 8 & 255) / 255.0F;
-			float b = (particleColor >> 0 & 255) / 255.0F;
-
 			for(int i = 0; i < 5; i++)
 			{
 				double velocityMultiplier = rand.nextDouble() * 0.5D;
@@ -53,13 +55,13 @@ public class ArcaneEntity extends MonsterEntity
 				double xSpeed = Math.cos(angle);
 				double ySpeed = rand.nextDouble() * 0.5D;
 				double zSpeed = Math.sin(angle);
-				Particle particle = Minecraft.getInstance().particles.addParticle(data, posX + xSpeed * 0.1D, posY + 0.3D, posZ + zSpeed * 0.1D, xSpeed, ySpeed, zSpeed);
+				Particle particle = Minecraft.getInstance().particles.addParticle(PARTICLE_DATA, posX + xSpeed * 0.1D, posY + 0.3D, posZ + zSpeed * 0.1D, xSpeed, ySpeed, zSpeed);
 
 				if(particle != null)
 				{
 					float colorOffset = 0.75F + rand.nextFloat() * 0.25F;
 
-					particle.setColor(r * colorOffset, g * colorOffset, b * colorOffset);
+					particle.setColor(PARTICLE_R * colorOffset, PARTICLE_G * colorOffset, PARTICLE_B * colorOffset);
 					particle.multiplyVelocity((float)velocityMultiplier);
 				}
 			}
@@ -72,5 +74,6 @@ public class ArcaneEntity extends MonsterEntity
 		super.registerAttributes();
 
 		getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+		getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 }

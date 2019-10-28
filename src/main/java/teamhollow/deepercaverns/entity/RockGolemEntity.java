@@ -30,6 +30,7 @@ public class RockGolemEntity extends MonsterEntity
 	{
 		super.registerAttributes();
 
+		getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
 	}

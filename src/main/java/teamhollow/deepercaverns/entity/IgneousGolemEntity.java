@@ -28,9 +28,9 @@ public class IgneousGolemEntity extends MonsterEntity
 	@Override
 	public void registerGoals()
 	{
-		goalSelector.addGoal(4, new MeleeFireAttackGoal(this, 0.6D, false));
+		goalSelector.addGoal(1, new MeleeFireAttackGoal(this, 0.6D, false));
+		goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.6D));
 		goalSelector.addGoal(6, new RandomSwimmingGoal(this, 1.0D, 100));
-		goalSelector.addGoal(7, new RandomWalkingGoal(this, 0.6D));
 		goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
 		goalSelector.addGoal(8, new LookRandomlyGoal(this));
 		targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
@@ -41,7 +41,7 @@ public class IgneousGolemEntity extends MonsterEntity
 	{
 		super.registerAttributes();
 
-		getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.6D);
+		getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
 	}

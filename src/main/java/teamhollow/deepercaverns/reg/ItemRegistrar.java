@@ -22,6 +22,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import teamhollow.deepercaverns.DeeperCaverns;
+import teamhollow.deepercaverns.item.ChaloniteSwordItem;
 import teamhollow.deepercaverns.misc.ArmorMaterial;
 import teamhollow.deepercaverns.misc.ItemTier;
 import teamhollow.deepercaverns.util.RegistryUtil;
@@ -34,7 +35,8 @@ public class ItemRegistrar
 	public static final Item ARCANE_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item BRIMSTONE_POWDER = RegistryUtil.injected();
 	public static final Item CHALONITE_INGOT = RegistryUtil.injected();
-	public static final Item CHALONITE_SWORD = RegistryUtil.injected();
+	public static final Item CHALONITE_SWORD_ONYX = RegistryUtil.injected();
+	public static final Item CHALONITE_SWORD_QUARTZ = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_AXE = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_BOOTS = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_CHESTPLATE = RegistryUtil.injected();
@@ -124,7 +126,8 @@ public class ItemRegistrar
 		event.getRegistry().register(new HoeItem(ItemTier.ONYX, -3.0F, defaultItemProperties()).setRegistryName("onyx_hoe"));
 		//chalonite
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("chalonite_ingot"));
-		event.getRegistry().register(new SwordItem(ItemTier.CHALONITE, 3, -2.4F, defaultItemProperties()).setRegistryName("chalonite_sword"));
+		event.getRegistry().register(new ChaloniteSwordItem(ItemTier.CHALONITE, 3, -2.4F, defaultItemProperties(), ChaloniteSwordItem.Side.ONYX).setRegistryName("chalonite_sword_onyx"));
+		event.getRegistry().register(new ChaloniteSwordItem(ItemTier.CHALONITE, 3, -2.4F, defaultItemProperties(), ChaloniteSwordItem.Side.QUARTZ).setRegistryName("chalonite_sword_quartz"));
 		blocksWithItem = null;
 	}
 

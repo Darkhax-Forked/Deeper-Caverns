@@ -5,6 +5,12 @@
     "block.deepercaverns.chiseled_obsidian": "Gemeißelter Obsidian",
     "block.deepercaverns.glowstone_lantern": "Glowstonelaterne",
     "block.deepercaverns.onyx_ore": "Onyxerz",
+    "block.deepercaverns.onyx_block": "Onyx Block",
+    "block.deepercaverns.onyx_pillar": "Onyxsäule",
+    "block.deepercaverns.onyx_tiles": "Onyxkacheln",
+    "block.deepercaverns.onyx_tile_slab": "Onyxkachelstufe",
+    "block.deepercaverns.onyx_tile_stairs": "Onyxkacheltreppe",
+    "block.deepercaverns.onyx_tile_wall": "Onyxkachelwand",
     "block.deepercaverns.pale_glass": "Fahles Glas",
     "block.deepercaverns.pale_glass_pane": "Fahle Glasscheibe",
     "block.deepercaverns.pale_sand": "Fahler Sand",
@@ -13,6 +19,8 @@
     "block.deepercaverns.soulglass": "Seelenglas",
     "block.deepercaverns.soulglass_pane": "Seelenglasscheibe",
     "block.deepercaverns.soulstone": "Seelenstein",
+
+	"death.attack.deepercaverns.arcane_sucks_life": "Ein Arkane hat das Leben aus %s gesaugt.",
 
     "entity.deepercaverns.arcane": "Arkane",
     "entity.deepercaverns.glurker": "Gschleicher",
@@ -23,11 +31,12 @@
     "entity.deepercaverns.wither_crusher": "Wither Zerstörer",
 
     "fluid.deepercaverns.soul_essence": "Seelenessenz",
-    
+
     "item.deepercaverns.arcane_spawn_egg": "Arkane-Spawn-Ei",
     "item.deepercaverns.brimstone_powder": "Schwefelpulver",
     "item.deepercaverns.chalonite_ingot": "Chalonitbarren",
-    "item.deepercaverns.chalonite_sword": "Chalonitschwert",
+    "item.deepercaverns.chalonite_sword_onyx": "Chalonitschwert",
+    "item.deepercaverns.chalonite_sword_quartz": "Chalonitschwert",
     "item.deepercaverns.ghostsoul_axe": "Geisterseelenaxt",
     "item.deepercaverns.ghostsoul_boots": "Geisterseelenstiefel",
     "item.deepercaverns.ghostsoul_chestplate": "Geisterseelenharnisch",
@@ -52,8 +61,12 @@
     "item.deepercaverns.igneous_golem_spawn_egg": "Feuriger-Golem-Spawn-Ei",
     "item.deepercaverns.onyx_arrow": "Onyxpfeil",
     "item.deepercaverns.onyx_axe": "Onyxaxt",
+    "item.deepercaverns.onyx_boots": "Onyxstiefel",
+    "item.deepercaverns.onyx_chestplate": "Onyxharnisch",
     "item.deepercaverns.onyx_gem": "Onyxedelstein",
+    "item.deepercaverns.onyx_helmet": "Onyxhelm",
     "item.deepercaverns.onyx_hoe": "Onyxhacke",
+    "item.deepercaverns.onyx_leggings": "Onyxbeinschutz",
     "item.deepercaverns.onyx_pickaxe": "Onyxspitzhacke",
     "item.deepercaverns.onyx_shovel": "Onyxschaufel",
     "item.deepercaverns.onyx_sword": "Onyxschwert",
@@ -66,6 +79,6 @@
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",
 
     "itemGroup.deepercaverns": "Deeper Caverns",
-    
+
     "jei.category.deepercaverns.soul_essence_cauldron": "Kessel mit Seelenessenz"
 }
