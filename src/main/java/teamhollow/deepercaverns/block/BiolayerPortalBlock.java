@@ -21,8 +21,6 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -131,8 +129,7 @@ public class BiolayerPortalBlock extends Block
 	@OnlyIn(Dist.CLIENT)
 	public void animateTick(BlockState state, World world, BlockPos pos, Random rand) //TODO: custom particle effects?
 	{
-		if(rand.nextInt(100) == 0)
-			world.playSound(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
+		//TODO: sound?
 
 		for(int i = 0; i < 4; ++i)
 		{
