@@ -1,0 +1,15 @@
+{
+    "display": {
+        "icon": {
+            "item": "deepercaverns:glowstone_crystal"
+        },
+        "title": "Burning Brighter",
+        "description": "Smelt something using a Brightforge."
+    },
+    "parent": "deepercaverns:bright_upgrade",
+    "criteria": {
+        "burning_brighter": {
+            "trigger": "deepercaverns:smelt_with_brightforge"
+        }
+    }
+}

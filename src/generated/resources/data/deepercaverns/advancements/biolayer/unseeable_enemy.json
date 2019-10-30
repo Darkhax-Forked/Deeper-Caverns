@@ -1,0 +1,33 @@
+{
+  "parent": "deepercaverns:biolayer/void_of_soul",
+  "display": {
+    "icon": {
+      "item": "deepercaverns:shade_spawn_egg"
+    },
+    "title": {
+      "text": "Unseeable Enemy"
+    },
+    "description": {
+      "text": "Get ambushed by a shade in the fog"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_by_shade": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "entity": {
+          "type": "deepercaverns:shade"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_by_shade"
+    ]
+  ]
+}

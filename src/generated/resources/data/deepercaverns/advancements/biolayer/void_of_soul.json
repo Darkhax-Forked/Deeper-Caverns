@@ -1,0 +1,31 @@
+{
+  "parent": "deepercaverns:biolayer/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:soul_sand"
+    },
+    "title": {
+      "text": "Void of Soul"
+    },
+    "description": {
+      "text": "Enter the soullands."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "entered_soullands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "deepercaverns:soulstone_hills"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_soullands"
+    ]
+  ]
+}

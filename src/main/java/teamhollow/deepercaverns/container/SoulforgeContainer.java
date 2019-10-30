@@ -4,6 +4,7 @@ import javax.annotation.Nonnull;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
@@ -12,9 +13,11 @@ import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.block.SoulforgeBlock;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.ContainerTypeRegistrar;
+import teamhollow.deepercaverns.reg.ItemRegistrar;
 import teamhollow.deepercaverns.tileentity.SoulforgeTileEntity;
 
 public class SoulforgeContainer extends Container
@@ -52,6 +55,20 @@ public class SoulforgeContainer extends Container
 			}
 		}));
 		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 128, 35) {
+			@Override
+			public ItemStack onTake(PlayerEntity player, ItemStack stack)
+			{
+				if(player instanceof ServerPlayerEntity)
+				{
+					if(stack.getItem() == ItemRegistrar.CHALONITE_INGOT)
+						DeeperCaverns.CREATE_CHALONITE_TRIGGER.trigger((ServerPlayerEntity)player);
+					else if(stack.getItem() == ItemRegistrar.GHOSTSOUL_INGOT)
+						DeeperCaverns.CREATE_GHOSTSOUL_TRIGGER.trigger((ServerPlayerEntity)player);
+				}
+
+				return stack;
+			}
+
 			@Override
 			public boolean isItemValid(ItemStack stack)
 			{

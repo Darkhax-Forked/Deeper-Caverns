@@ -1,0 +1,35 @@
+{
+  "parent": "deepercaverns:biolayer/void_of_soul",
+  "display": {
+    "icon": {
+      "item": "deepercaverns:soulforge"
+    },
+    "title": {
+      "text": "With Head And Soul"
+    },
+    "description": {
+      "text": "Craft a Soulforge"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_soulforge": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "deepercaverns:soulforge"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_soulforge"
+    ]
+  ]
+}

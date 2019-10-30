@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "deepercaverns:soulstone"
+    },
+    "title": {
+      "text": "Lush Fire"
+    },
+    "description": {
+      "text": "Enter the Biolayer"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "deepercaverns:textures/block/soulstone.png"
+  },
+  "criteria": {
+    "entered_biolayer": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "entered_biolayer"
+    ]
+  ]
+}

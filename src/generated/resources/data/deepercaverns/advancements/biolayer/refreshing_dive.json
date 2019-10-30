@@ -1,0 +1,31 @@
+{
+  "parent": "deepercaverns:biolayer/wrong_side_of_heaven",
+  "display": {
+    "icon": {
+      "item": "deepercaverns:soul_essence_bucket"
+    },
+    "title": {
+      "text": "Refreshing Dive"
+    },
+    "description": {
+      "text": "Enter Soul Essence."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "entered_soul_essence": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "deepercaverns:soul_essence_fluid_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_soul_essence"
+    ]
+  ]
+}

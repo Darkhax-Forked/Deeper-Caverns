@@ -2,6 +2,7 @@ package teamhollow.deepercaverns.container;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
@@ -10,6 +11,7 @@ import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.ContainerTypeRegistrar;
 import teamhollow.deepercaverns.tileentity.BrightforgeTileEntity;
@@ -46,6 +48,15 @@ public class BrightforgeContainer extends Container
 			}
 		}));
 		te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 116, 35) {
+			@Override
+			public ItemStack onTake(PlayerEntity player, ItemStack stack)
+			{
+				if(player instanceof ServerPlayerEntity)
+					DeeperCaverns.SMELT_WITH_BRIGHTFORGE_TRIGGER.trigger((ServerPlayerEntity)player);
+
+				return stack;
+			}
+
 			@Override
 			public boolean isItemValid(ItemStack stack)
 			{

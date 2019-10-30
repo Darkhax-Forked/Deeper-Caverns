@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:glowstone"
+        },
+        "title": "Fuel For The fire",
+        "description": "Mine Glowstone."
+    },
+    "parent": "minecraft:nether/root",
+    "criteria": {
+        "builder": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:glowstone_dust"
+                    }
+                ]
+            }
+        }
+    }
+}

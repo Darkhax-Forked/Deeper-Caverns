@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "deepercaverns:brightforge"
+        },
+        "title": "Bright Upgrade",
+        "description": "Craft a Brightforge."
+    },
+    "parent": "deepercaverns:fuel_for_the_fire",
+    "criteria": {
+        "builder": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "deepercaverns:brightforge"
+                    }
+                ]
+            }
+        }
+    }
+}

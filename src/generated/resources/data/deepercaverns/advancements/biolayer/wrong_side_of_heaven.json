@@ -1,0 +1,31 @@
+{
+  "parent": "deepercaverns:biolayer/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:netherrack"
+    },
+    "title": {
+      "text": "Wrong Side of Heaven"
+    },
+    "description": {
+      "text": "Enter hell."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "entered_hell": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "biome": "deepercaverns:biolayer_hell"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_hell"
+    ]
+  ]
+}
