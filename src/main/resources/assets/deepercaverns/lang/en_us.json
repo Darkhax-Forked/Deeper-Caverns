@@ -29,6 +29,7 @@
     "entity.deepercaverns.igneous_golem": "Igneous Golem",
     "entity.deepercaverns.rock_golem": "Rock Golem",
     "entity.deepercaverns.soulbryn_block": "Soulbryn Block",
+    "entity.deepercaverns.shade": "Shade",
     "entity.deepercaverns.surgefly": "Surgefly",
     "entity.deepercaverns.wither_crusher": "Wither Crusher",
 
@@ -77,6 +78,7 @@
     "item.deepercaverns.soulbryn": "Soulbryn",
     "item.deepercaverns.soul_essence_bucket": "Soul Essence Bucket",
     "item.deepercaverns.soul_ingot": "Soul Ingot",
+    "item.deepercaverns.shade_spawn_egg": "Shade Spawn Egg",
     "item.deepercaverns.surgefly_spawn_egg": "Surgefly Spawn Egg",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither Crusher Spawn Egg",
 

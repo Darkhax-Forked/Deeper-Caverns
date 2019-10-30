@@ -29,6 +29,7 @@
     "entity.deepercaverns.igneous_golem": "Feuriger Golem",
     "entity.deepercaverns.rock_golem": "Steingolem",
     "entity.deepercaverns.soulbryn_block": "Soulbryn Block",
+    "entity.deepercaverns.shade": "Schatten",
     "entity.deepercaverns.surgefly": "Sturmfliege",
     "entity.deepercaverns.wither_crusher": "Wither Zerstörer",
 
@@ -77,6 +78,7 @@
     "item.deepercaverns.soulbryn": "Soulbryn",
     "item.deepercaverns.soul_essence_bucket": "Seelenessenzeimer",
     "item.deepercaverns.soul_ingot": "Seelenbarren",
+    "item.deepercaverns.shade_spawn_egg": "Schatten-Spawn-Ei",
     "item.deepercaverns.surgefly_spawn_egg": "Sturmfliege-Spawn-Ei",
     "item.deepercaverns.wither_crusher_spawn_egg": "Wither-Zerstörer-Spawn-Ei",
 

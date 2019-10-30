@@ -70,6 +70,7 @@ public class ItemRegistrar
 	public static final Item ROCK_GOLEM_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item SOULBRYN = RegistryUtil.injected();
 	public static final Item SOUL_INGOT = RegistryUtil.injected();
+	public static final Item SHADE_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item SURGEFLY_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item WITHER_CRUSHER_SPAWN_EGG = RegistryUtil.injected();
 
@@ -86,6 +87,7 @@ public class ItemRegistrar
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.GLURKER, 0xFF5733, 0xC70039));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.IGNEOUS_GOLEM, 0xEC5300, 0xFFB605));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.ROCK_GOLEM, 0x505050, 0x107414));
+		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.SHADE, 0x000000, 0x666666));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.SURGEFLY, 0xE9D700, 0xA98600));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.WITHER_CRUSHER, 0x333333, 0x999999));
 		/*random items*/
