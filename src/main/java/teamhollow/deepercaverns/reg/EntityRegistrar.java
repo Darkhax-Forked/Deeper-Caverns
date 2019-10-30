@@ -12,16 +12,14 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.biome.Biome.SpawnListEntry;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import teamhollow.deepercaverns.DeeperCaverns;
 import teamhollow.deepercaverns.entity.ArcaneEntity;
+import teamhollow.deepercaverns.entity.ArcaneProjectileEntity;
 import teamhollow.deepercaverns.entity.GlurkerEntity;
 import teamhollow.deepercaverns.entity.IgneousGolemEntity;
 import teamhollow.deepercaverns.entity.RockGolemEntity;
@@ -37,6 +35,7 @@ public class EntityRegistrar {
 		return world.getFluidState(pos).isTagged(FluidTags.LAVA) && !world.getBlockState(posUp).isAir(world, posUp);
 	});
 	public static final EntityType<ArcaneEntity> ARCANE = (EntityType<ArcaneEntity>)EntityType.Builder.<ArcaneEntity>create(ArcaneEntity::new, EntityClassification.MONSTER).size(0.6F, 1.95F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + ArcaneEntity.NAME).setRegistryName(ArcaneEntity.NAME);
+	public static final EntityType<ArcaneProjectileEntity> ARCANE_PROJECTILE = (EntityType<ArcaneProjectileEntity>)EntityType.Builder.<ArcaneProjectileEntity>create(ArcaneProjectileEntity::new, EntityClassification.MONSTER).size(0.1F, 0.1F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + ArcaneProjectileEntity.NAME).setRegistryName(ArcaneProjectileEntity.NAME);
 	public static final EntityType<GlurkerEntity> GLURKER = (EntityType<GlurkerEntity>)EntityType.Builder.<GlurkerEntity>create(GlurkerEntity::new, EntityClassification.MONSTER).size(0.6F, 1.95F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + GlurkerEntity.NAME).setRegistryName(GlurkerEntity.NAME);
 	public static final EntityType<IgneousGolemEntity> IGNEOUS_GOLEM = (EntityType<IgneousGolemEntity>)EntityType.Builder.<IgneousGolemEntity>create(IgneousGolemEntity::new, EntityClassification.MONSTER).immuneToFire().size(1.25F, 2.5F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + IgneousGolemEntity.NAME).setRegistryName(IgneousGolemEntity.NAME);
 	public static final EntityType<RockGolemEntity> ROCK_GOLEM = (EntityType<RockGolemEntity>)EntityType.Builder.<RockGolemEntity>create(RockGolemEntity::new, EntityClassification.MONSTER).size(1.0F, 1.0F).setTrackingRange(128).setUpdateInterval(1).setShouldReceiveVelocityUpdates(true).build(DeeperCaverns.PREFIX + RockGolemEntity.NAME).setRegistryName(RockGolemEntity.NAME);
@@ -47,6 +46,7 @@ public class EntityRegistrar {
 	@SubscribeEvent
 	public static void onRegisterEntityTypes(RegistryEvent.Register<EntityType<?>> event) {
 		event.getRegistry().register(ARCANE);
+		event.getRegistry().register(ARCANE_PROJECTILE);
 		event.getRegistry().register(GLURKER);
 		event.getRegistry().register(IGNEOUS_GOLEM);
 		event.getRegistry().register(ROCK_GOLEM);

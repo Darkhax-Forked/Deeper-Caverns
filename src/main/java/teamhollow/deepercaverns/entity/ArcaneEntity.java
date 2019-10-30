@@ -13,6 +13,7 @@ import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.world.World;
+import teamhollow.deepercaverns.entity.ai.ShootMagicProjectileGoal;
 import teamhollow.deepercaverns.entity.ai.SuckLifeGoal;
 import teamhollow.deepercaverns.entity.ai.ThrowEntityGoal;
 
@@ -33,6 +34,7 @@ public class ArcaneEntity extends MonsterEntity
 	@Override
 	public void registerGoals()
 	{
+		goalSelector.addGoal(0, new ShootMagicProjectileGoal(this, 1.0D, 15.0F));
 		goalSelector.addGoal(3, new ThrowEntityGoal(this));
 		goalSelector.addGoal(8, new SuckLifeGoal(this, 6, 8, 0.25F, 0.33F));
 		goalSelector.addGoal(4, new RandomWalkingGoal(this, 0.8D));

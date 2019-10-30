@@ -20,9 +20,11 @@
     "block.deepercaverns.soulglass_pane": "Seelenglasscheibe",
     "block.deepercaverns.soulstone": "Seelenstein",
 
+	"death.attack.deepercaverns.arcane_projectile": "Ein Arkane hat %s mit Magie getroffen.",
 	"death.attack.deepercaverns.arcane_sucks_life": "Ein Arkane hat das Leben aus %s gesaugt.",
 
     "entity.deepercaverns.arcane": "Arkane",
+    "entity.deepercaverns.arcane_projectile": "Magisches Projektil",
     "entity.deepercaverns.glurker": "Gschleicher",
     "entity.deepercaverns.igneous_golem": "Feuriger Golem",
     "entity.deepercaverns.rock_golem": "Steingolem",

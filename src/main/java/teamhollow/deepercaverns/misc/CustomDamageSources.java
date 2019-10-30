@@ -5,5 +5,6 @@ import teamhollow.deepercaverns.DeeperCaverns;
 
 public class CustomDamageSources
 {
+	public static final DamageSource ARCANE_PROJECTILE = new DamageSource(DeeperCaverns.MODID + ".arcane_projectile");
 	public static final DamageSource ARCANE_SUCKS_LIFE = new DamageSource(DeeperCaverns.MODID + ".arcane_sucks_life").setDamageBypassesArmor();
 }
