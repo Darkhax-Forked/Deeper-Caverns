@@ -18,11 +18,11 @@ public class BrightforgeRecipe
 	public static final Map<ResourceLocation,BrightforgeRecipe> RECIPES = new HashMap<>();
 
 	static {
-		register(new BrightforgeRecipe(BlockRegistrar.BRIMSTONE, ItemRegistrar.BRIMSTONE_POWDER).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "brimstone_powder")));
 		register(new BrightforgeRecipe(Items.GLOWSTONE, ItemRegistrar.GLOWSTONE_CRYSTAL).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "glowstone_crystal")));
 		register(new BrightforgeRecipe(BlockRegistrar.ONYX_ORE, ItemRegistrar.ONYX_GEM).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "onyx_gem")));
 		register(new BrightforgeRecipe(Blocks.SOUL_SAND, BlockRegistrar.SOULGLASS).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soulglass")));
 		register(new BrightforgeRecipe(BlockRegistrar.SOULSTONE, ItemRegistrar.SOUL_INGOT).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "soul_ingot")));
+		register(new BrightforgeRecipe(BlockRegistrar.RAW_SULFUR, ItemRegistrar.SULFUR_POWDER).setRegistryName(new ResourceLocation(DeeperCaverns.MODID, "sulfur_powder")));
 	}
 
 	private ResourceLocation registryName;

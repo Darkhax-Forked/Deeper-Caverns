@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "deepercaverns:ghostsoul_shovel"
+      "deepercaverns:soulfur_block"
     ]
   },
   "criteria": {
-    "has_ghostsoul_ingot": {
+    "has_soulfur": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "deepercaverns:ghostsoul_ingot"
+            "item": "deepercaverns:soulfur"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "deepercaverns:ghostsoul_shovel"
+        "recipe": "deepercaverns:soulfur_block"
       }
     }
   },
   "requirements": [
     [
-      "has_ghostsoul_ingot",
+      "has_soulfur",
       "has_the_recipe"
     ]
   ]

@@ -9,19 +9,19 @@ import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
-import teamhollow.deepercaverns.entity.SoulbrynBlockEntity;
+import teamhollow.deepercaverns.entity.SoulfurBlockEntity;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 
-public class SoulbrynBlockEntityRenderer extends EntityRenderer<SoulbrynBlockEntity>
+public class SoulfurBlockEntityRenderer extends EntityRenderer<SoulfurBlockEntity>
 {
-	public SoulbrynBlockEntityRenderer(EntityRendererManager renderManager)
+	public SoulfurBlockEntityRenderer(EntityRendererManager renderManager)
 	{
 		super(renderManager);
 		this.shadowSize = 0.5F;
 	}
 
 	@Override
-	public void doRender(SoulbrynBlockEntity entity, double x, double y, double z, float entityYaw, float partialTicks)
+	public void doRender(SoulfurBlockEntity entity, double x, double y, double z, float entityYaw, float partialTicks)
 	{
 		BlockRendererDispatcher brd = Minecraft.getInstance().getBlockRendererDispatcher();
 		GlStateManager.pushMatrix();
@@ -44,14 +44,14 @@ public class SoulbrynBlockEntityRenderer extends EntityRenderer<SoulbrynBlockEnt
 		bindEntityTexture(entity);
 		GlStateManager.rotatef(-90.0F, 0.0F, 1.0F, 0.0F);
 		GlStateManager.translatef(-0.5F, -0.5F, 0.5F);
-		brd.renderBlockBrightness(BlockRegistrar.SOULBRYN_BLOCK.getDefaultState(), entity.getBrightness());
+		brd.renderBlockBrightness(BlockRegistrar.SOULFUR_BLOCK.getDefaultState(), entity.getBrightness());
 		GlStateManager.translatef(0.0F, 0.0F, 1.0F);
 
 		if(renderOutlines)
 		{
 			GlStateManager.enableColorMaterial();
 			GlStateManager.setupSolidRenderingTextureCombine(getTeamColor(entity));
-			brd.renderBlockBrightness(BlockRegistrar.SOULBRYN_BLOCK.getDefaultState(), 1.0F);
+			brd.renderBlockBrightness(BlockRegistrar.SOULFUR_BLOCK.getDefaultState(), 1.0F);
 			GlStateManager.tearDownSolidRenderingTextureCombine();
 			GlStateManager.disableColorMaterial();
 		}
@@ -64,7 +64,7 @@ public class SoulbrynBlockEntityRenderer extends EntityRenderer<SoulbrynBlockEnt
 			GlStateManager.color4f(1.0F, 1.0F, 1.0F, alpha);
 			GlStateManager.polygonOffset(-3.0F, -3.0F);
 			GlStateManager.enablePolygonOffset();
-			brd.renderBlockBrightness(BlockRegistrar.SOULBRYN_BLOCK.getDefaultState(), 1.0F);
+			brd.renderBlockBrightness(BlockRegistrar.SOULFUR_BLOCK.getDefaultState(), 1.0F);
 			GlStateManager.polygonOffset(0.0F, 0.0F);
 			GlStateManager.disablePolygonOffset();
 			GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -78,7 +78,7 @@ public class SoulbrynBlockEntityRenderer extends EntityRenderer<SoulbrynBlockEnt
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(SoulbrynBlockEntity entity)
+	protected ResourceLocation getEntityTexture(SoulfurBlockEntity entity)
 	{
 		return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
 	}

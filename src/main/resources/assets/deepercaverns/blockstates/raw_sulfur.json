@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "deepercaverns:block/raw_sulfur" },
+            { "model": "deepercaverns:block/raw_sulfur", "y": 90 },
+            { "model": "deepercaverns:block/raw_sulfur", "y": 180 },
+            { "model": "deepercaverns:block/raw_sulfur", "y": 270 }
+        ]
+    }
+}

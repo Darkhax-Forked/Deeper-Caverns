@@ -12,11 +12,11 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import teamhollow.deepercaverns.entity.SoulbrynBlockEntity;
+import teamhollow.deepercaverns.entity.SoulfurBlockEntity;
 
-public class SoulbrynBlock extends Block
+public class SoulfurBlock extends Block
 {
-	public SoulbrynBlock(Properties properties)
+	public SoulfurBlock(Properties properties)
 	{
 		super(properties);
 	}
@@ -62,7 +62,7 @@ public class SoulbrynBlock extends Block
 	{
 		if(!world.isRemote)
 		{
-			SoulbrynBlockEntity entity = new SoulbrynBlockEntity(world, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D);
+			SoulfurBlockEntity entity = new SoulfurBlockEntity(world, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D);
 
 			world.removeBlock(pos, false);
 			world.addEntity(entity);

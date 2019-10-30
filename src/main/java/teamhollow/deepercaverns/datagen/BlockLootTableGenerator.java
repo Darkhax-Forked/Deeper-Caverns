@@ -26,7 +26,6 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 	protected void addTables()
 	{
 		lootTables.put(BlockRegistrar.BRIGHTFORGE, createStandardBlockLootTable(BlockRegistrar.BRIGHTFORGE));
-		lootTables.put(BlockRegistrar.BRIMSTONE, createStandardBlockLootTable(BlockRegistrar.BRIMSTONE));
 		lootTables.put(BlockRegistrar.CHISELED_OBSIDIAN, createStandardBlockLootTable(BlockRegistrar.CHISELED_OBSIDIAN));
 		lootTables.put(BlockRegistrar.GLOWSTONE_LANTERN, createStandardBlockLootTable(BlockRegistrar.GLOWSTONE_LANTERN));
 		lootTables.put(BlockRegistrar.ONYX_ORE, LootTable.builder()
@@ -50,8 +49,9 @@ public class BlockLootTableGenerator extends BlockLootTableProvider
 						.acceptCondition(MatchTool.builder(
 								new ItemPredicate.Builder().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, IntBound.atLeast(1)))))));
 		lootTables.put(BlockRegistrar.PALE_SAND, createStandardBlockLootTable(BlockRegistrar.PALE_SAND));
-		lootTables.put(BlockRegistrar.SOULBRYN_BLOCK, createStandardBlockLootTable(BlockRegistrar.SOULBRYN_BLOCK));
+		lootTables.put(BlockRegistrar.RAW_SULFUR, createStandardBlockLootTable(BlockRegistrar.RAW_SULFUR));
 		lootTables.put(BlockRegistrar.SOULFORGE, createStandardBlockLootTable(BlockRegistrar.SOULFORGE));
+		lootTables.put(BlockRegistrar.SOULFUR_BLOCK, createStandardBlockLootTable(BlockRegistrar.SOULFUR_BLOCK));
 		lootTables.put(BlockRegistrar.SOULGLASS, LootTable.builder()
 				.addLootPool(LootPool.builder()
 						.rolls(ConstantRange.of(1))

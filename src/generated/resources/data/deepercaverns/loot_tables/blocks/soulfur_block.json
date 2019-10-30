@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "deepercaverns:soulbryn_block"
+          "name": "deepercaverns:soulfur_block"
         }
       ],
       "conditions": [

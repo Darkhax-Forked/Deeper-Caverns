@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "deepercaverns:brimstone"
+          "name": "deepercaverns:raw_sulfur"
         }
       ],
       "conditions": [

@@ -9,28 +9,28 @@ import net.minecraft.world.Explosion.Mode;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.network.NetworkHooks;
-import teamhollow.deepercaverns.misc.SoulbrynExplosion;
+import teamhollow.deepercaverns.misc.SoulfurExplosion;
 import teamhollow.deepercaverns.reg.EntityRegistrar;
 
-public class SoulbrynBlockEntity extends TNTEntity
+public class SoulfurBlockEntity extends TNTEntity
 {
-	public static final String NAME = "soulbryn_block";
+	public static final String NAME = "soulfur_block";
 
-	public SoulbrynBlockEntity(World world)
+	public SoulfurBlockEntity(World world)
 	{
-		this(EntityRegistrar.SOULBRYN_BLOCK, world);
+		this(EntityRegistrar.SOULFUR_BLOCK, world);
 	}
 
-	public SoulbrynBlockEntity(EntityType<? extends TNTEntity> type, World world)
+	public SoulfurBlockEntity(EntityType<? extends TNTEntity> type, World world)
 	{
 		super(type, world);
 
 		preventEntitySpawning = true;
 	}
 
-	public SoulbrynBlockEntity(World world, double x, double y, double z)
+	public SoulfurBlockEntity(World world, double x, double y, double z)
 	{
-		this(EntityRegistrar.SOULBRYN_BLOCK, world);
+		this(EntityRegistrar.SOULFUR_BLOCK, world);
 
 		double randVal = world.rand.nextDouble() * ((float)Math.PI * 2F);
 
@@ -46,7 +46,7 @@ public class SoulbrynBlockEntity extends TNTEntity
 	public void explode()
 	{
 		BlockPos pos = getPosition();
-		Explosion explosion = new SoulbrynExplosion(world, pos, 5);
+		Explosion explosion = new SoulfurExplosion(world, pos, 5);
 
 		if(ForgeEventFactory.onExplosionStart(world, explosion))
 			return;

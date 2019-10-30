@@ -64,27 +64,27 @@ public class RecipeGenerator extends RecipeProvider
 		.key('G', BlockRegistrar.SOULGLASS)
 		.addCriterion("has_soulglass", hasItem(BlockRegistrar.SOULGLASS))
 		.build(consumer);
-		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.SOULBRYN)
+		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.SOULFUR)
 		.patternLine("BSB")
 		.patternLine("SBS")
 		.patternLine("BSB")
-		.key('B', ItemRegistrar.BRIMSTONE_POWDER)
+		.key('B', ItemRegistrar.SULFUR_POWDER)
 		.key('S', Ingredient.fromItems(BlockRegistrar.PALE_SAND, Blocks.SOUL_SAND))
-		.addCriterion("has_brimstone_powder", hasItem(ItemRegistrar.BRIMSTONE_POWDER))
-		.build(consumer);
-		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.SOULBRYN_BLOCK)
-		.patternLine("SSS")
-		.patternLine("SSS")
-		.patternLine("SSS")
-		.key('S', ItemRegistrar.SOULBRYN)
-		.addCriterion("has_soulbryn", hasItem(ItemRegistrar.SOULBRYN))
+		.addCriterion("has_sulfur_powder", hasItem(ItemRegistrar.SULFUR_POWDER))
 		.build(consumer);
 		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.SOULFORGE)
 		.patternLine("SSS")
 		.patternLine("S S")
 		.patternLine("SSS")
-		.key('S', BlockRegistrar.SOULBRYN_BLOCK)
-		.addCriterion("has_soulbryn_block", hasItem(BlockRegistrar.SOULBRYN_BLOCK))
+		.key('S', BlockRegistrar.SOULFUR_BLOCK)
+		.addCriterion("has_soulfur_block", hasItem(BlockRegistrar.SOULFUR_BLOCK))
+		.build(consumer);
+		ShapedRecipeBuilder.shapedRecipe(BlockRegistrar.SOULFUR_BLOCK)
+		.patternLine("SSS")
+		.patternLine("SSS")
+		.patternLine("SSS")
+		.key('S', ItemRegistrar.SOULFUR)
+		.addCriterion("has_soulfur", hasItem(ItemRegistrar.SOULFUR))
 		.build(consumer);
 		ShapedRecipeBuilder.shapedRecipe(ItemRegistrar.ONYX_ARROW, 4)
 		.patternLine("O")
@@ -105,7 +105,6 @@ public class RecipeGenerator extends RecipeProvider
 		.build(consumer);
 
 		//standard tool recipes
-		addStandardToolRecipes(consumer, ItemRegistrar.GHOSTSOUL_INGOT, ItemRegistrar.GHOSTSOUL_AXE, ItemRegistrar.GHOSTSOUL_HOE, ItemRegistrar.GHOSTSOUL_PICKAXE, ItemRegistrar.GHOSTSOUL_SHOVEL, ItemRegistrar.GHOSTSOUL_SWORD);
 		addStandardToolRecipes(consumer, ItemRegistrar.GLOWSTONE_CRYSTAL, ItemRegistrar.GLOWSTONE_CRYSTAL_AXE, ItemRegistrar.GLOWSTONE_CRYSTAL_HOE, ItemRegistrar.GLOWSTONE_CRYSTAL_PICKAXE, ItemRegistrar.GLOWSTONE_CRYSTAL_SHOVEL, ItemRegistrar.GLOWSTONE_CRYSTAL_SWORD);
 		addStandardToolRecipes(consumer, ItemRegistrar.ONYX_GEM, ItemRegistrar.ONYX_AXE, ItemRegistrar.ONYX_HOE, ItemRegistrar.ONYX_PICKAXE, ItemRegistrar.ONYX_SHOVEL, ItemRegistrar.ONYX_SWORD);
 

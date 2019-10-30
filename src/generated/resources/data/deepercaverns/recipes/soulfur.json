@@ -7,7 +7,7 @@
   ],
   "key": {
     "B": {
-      "item": "deepercaverns:brimstone_powder"
+      "item": "deepercaverns:sulfur_powder"
     },
     "S": [
       {
@@ -19,6 +19,6 @@
     ]
   },
   "result": {
-    "item": "deepercaverns:soulbryn"
+    "item": "deepercaverns:soulfur"
   }
 }

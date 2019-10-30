@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "deepercaverns:ghostsoul_axe"
+      "deepercaverns:soulfur"
     ]
   },
   "criteria": {
-    "has_ghostsoul_ingot": {
+    "has_sulfur_powder": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "deepercaverns:ghostsoul_ingot"
+            "item": "deepercaverns:sulfur_powder"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "deepercaverns:ghostsoul_axe"
+        "recipe": "deepercaverns:soulfur"
       }
     }
   },
   "requirements": [
     [
-      "has_ghostsoul_ingot",
+      "has_sulfur_powder",
       "has_the_recipe"
     ]
   ]

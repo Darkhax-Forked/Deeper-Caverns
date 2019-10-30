@@ -33,20 +33,14 @@ public class ItemRegistrar
 {
 	private static List<Block> blocksWithItem = new ArrayList<>();
 	public static final Item ARCANE_SPAWN_EGG = RegistryUtil.injected();
-	public static final Item BRIMSTONE_POWDER = RegistryUtil.injected();
 	public static final Item CHALONITE_INGOT = RegistryUtil.injected();
 	public static final Item CHALONITE_SWORD_ONYX = RegistryUtil.injected();
 	public static final Item CHALONITE_SWORD_QUARTZ = RegistryUtil.injected();
-	public static final Item GHOSTSOUL_AXE = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_BOOTS = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_CHESTPLATE = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_HELMET = RegistryUtil.injected();
-	public static final Item GHOSTSOUL_HOE = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_INGOT = RegistryUtil.injected();
 	public static final Item GHOSTSOUL_LEGGINGS = RegistryUtil.injected();
-	public static final Item GHOSTSOUL_PICKAXE = RegistryUtil.injected();
-	public static final Item GHOSTSOUL_SHOVEL = RegistryUtil.injected();
-	public static final Item GHOSTSOUL_SWORD = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL_AXE = RegistryUtil.injected();
 	public static final Item GLOWSTONE_CRYSTAL_BOOTS = RegistryUtil.injected();
@@ -68,9 +62,10 @@ public class ItemRegistrar
 	public static final Item ONYX_SWORD = RegistryUtil.injected();
 	public static final Item PALE_GLASS_SHARDS = RegistryUtil.injected();
 	public static final Item ROCK_GOLEM_SPAWN_EGG = RegistryUtil.injected();
-	public static final Item SOULBRYN = RegistryUtil.injected();
-	public static final Item SOUL_INGOT = RegistryUtil.injected();
 	public static final Item SHADE_SPAWN_EGG = RegistryUtil.injected();
+	public static final Item SOULFUR = RegistryUtil.injected();
+	public static final Item SOUL_INGOT = RegistryUtil.injected();
+	public static final Item SULFUR_POWDER = RegistryUtil.injected();
 	public static final Item SURGEFLY_SPAWN_EGG = RegistryUtil.injected();
 	public static final Item WITHER_CRUSHER_SPAWN_EGG = RegistryUtil.injected();
 
@@ -91,11 +86,11 @@ public class ItemRegistrar
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.SURGEFLY, 0xE9D700, 0xA98600));
 		event.getRegistry().register(makeSpawnEgg(EntityRegistrar.WITHER_CRUSHER, 0x333333, 0x999999));
 		/*random items*/
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("brimstone_powder"));
 		event.getRegistry().register(new ArrowItem(defaultItemProperties()).setRegistryName("onyx_arrow"));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("pale_glass_shards"));
-		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("soulbryn"));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("soulfur"));
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("soul_ingot"));
+		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("sulfur_powder"));
 		/*armor, tools, and their materials*/ //TODO: change tool values, currently they're like gold by default
 		//ghostsoul
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("ghostsoul_ingot"));
@@ -103,11 +98,6 @@ public class ItemRegistrar
 		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.CHEST, defaultItemProperties()).setRegistryName("ghostsoul_chestplate"));
 		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.LEGS, defaultItemProperties()).setRegistryName("ghostsoul_leggings"));
 		event.getRegistry().register(new ArmorItem(ArmorMaterial.GHOSTSOUL, EquipmentSlotType.FEET, defaultItemProperties()).setRegistryName("ghostsoul_boots"));
-		event.getRegistry().register(new SwordItem(ItemTier.GHOSTSOUL, 3, -2.4F, defaultItemProperties()).setRegistryName("ghostsoul_sword"));
-		event.getRegistry().register(new ShovelItem(ItemTier.GHOSTSOUL, 1.5F, -3.0F, defaultItemProperties()).setRegistryName("ghostsoul_shovel"));
-		event.getRegistry().register(new PickaxeItem(ItemTier.GHOSTSOUL, 1, -2.8F, defaultItemProperties()).setRegistryName("ghostsoul_pickaxe"));
-		event.getRegistry().register(new AxeItem(ItemTier.GHOSTSOUL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName("ghostsoul_axe"));
-		event.getRegistry().register(new HoeItem(ItemTier.GHOSTSOUL, -3.0F, defaultItemProperties()).setRegistryName("ghostsoul_hoe"));
 		//glowstone crystal
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("glowstone_crystal"));
 		event.getRegistry().register(new ArmorItem(ArmorMaterial.GLOWSTONE_CRYSTAL, EquipmentSlotType.HEAD, defaultItemProperties()).setRegistryName("glowstone_crystal_helmet"));

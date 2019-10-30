@@ -7,12 +7,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class SoulbrynExplosion extends Explosion
+public class SoulfurExplosion extends Explosion
 {
 	private Random r = new Random();
 	private World world;
 
-	public SoulbrynExplosion(World world, BlockPos pos, float size)
+	public SoulfurExplosion(World world, BlockPos pos, float size)
 	{
 		super(world, null, pos.getX(), pos.getY(), pos.getZ(), size, false, Mode.BREAK);
 		this.world = world;
