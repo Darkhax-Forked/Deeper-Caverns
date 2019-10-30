@@ -60,11 +60,6 @@ public class EntityRegistrar {
 		EntitySpawnPlacementRegistry.register(WITHER_CRUSHER, PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityRegistrar::notPeaceful);
 	}
 
-	@SubscribeEvent
-	public static void onFMLLoadComplete(FMLLoadCompleteEvent event) {
-		Biomes.NETHER.getSpawns(EntityClassification.MONSTER).add(new SpawnListEntry(IGNEOUS_GOLEM, 50, 1, 1)); //TODO: not quite working yet
-	}
-
 	private static boolean notPeaceful(EntityType<? extends Entity> type, IWorld world, SpawnReason reason, BlockPos pos, Random random) {
 		return world.getDifficulty() != Difficulty.PEACEFUL;
 	}
