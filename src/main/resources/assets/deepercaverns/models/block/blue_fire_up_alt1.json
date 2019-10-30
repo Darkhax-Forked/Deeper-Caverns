@@ -1,0 +1,7 @@
+{
+    "parent": "block/fire_up_alt",
+    "textures": {
+        "particle": "deepercaverns:block/blue_fire_1",
+        "fire": "deepercaverns:block/blue_fire_1"
+    }
+}
