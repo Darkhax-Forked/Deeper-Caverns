@@ -28,7 +28,6 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import teamhollow.deepercaverns.misc.CustomFillerBlockType;
 import teamhollow.deepercaverns.reg.BlockRegistrar;
 import teamhollow.deepercaverns.reg.EntityRegistrar;
-import teamhollow.deepercaverns.world.generation.feature.DeeperCavernsFeatures;
 import teamhollow.deepercaverns.world.generation.surfacebuilder.DeeperCavernsSurfaceBuilders;
 
 public class BiolayerHellBiome extends Biome {
@@ -58,7 +57,7 @@ public class BiolayerHellBiome extends Biome {
 		//DefaultBiomeFeatures.addSprings(this);
 		//addFeature(Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.NETHER_BRIDGE, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
 		addFeature(Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.NETHER_SPRING, new HellLavaConfig(false), Placement.COUNT_RANGE, new CountRangeConfig(8, 4, 8, 128)));
-		addFeature(Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(DeeperCavernsFeatures.BLUE_FIRE, IFeatureConfig.NO_FEATURE_CONFIG, Placement.HELL_FIRE, new FrequencyConfig(10)));
+		addFeature(Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.HELL_FIRE, IFeatureConfig.NO_FEATURE_CONFIG, Placement.HELL_FIRE, new FrequencyConfig(10)));
 		addFeature(Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.GLOWSTONE_BLOB, IFeatureConfig.NO_FEATURE_CONFIG, Placement.LIGHT_GEM_CHANCE, new FrequencyConfig(10)));
 		addFeature(Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.GLOWSTONE_BLOB, IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_RANGE, new CountRangeConfig(10, 0, 0, 128)));
 		addFeature(Decoration.UNDERGROUND_DECORATION, createDecoratedFeature(Feature.BUSH, new BushConfig(Blocks.BROWN_MUSHROOM.getDefaultState()), Placement.CHANCE_RANGE, new ChanceRangeConfig(0.5F, 0, 0, 128)));
