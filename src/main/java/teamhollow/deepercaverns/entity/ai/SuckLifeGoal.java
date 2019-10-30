@@ -24,6 +24,12 @@ public class SuckLifeGoal extends MeleeAttackGoal
 	}
 
 	@Override
+	public boolean shouldExecute()
+	{
+		return super.shouldExecute() && !(attacker.getAttackTarget() instanceof ArcaneEntity);
+	}
+
+	@Override
 	public void tick()
 	{
 		if(attacker.getAttackTarget() != null) //safeguard, can crash without
