@@ -115,8 +115,8 @@ public class ItemRegistrar
 		event.getRegistry().register(new SwordItem(ItemTier.GLOWSTONE_CRYSTAL, 3, -2.4F, defaultItemProperties()).setRegistryName("glowstone_crystal_sword"));
 		event.getRegistry().register(new ShovelItem(ItemTier.GLOWSTONE_CRYSTAL, 1.5F, -3.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_shovel"));
 		event.getRegistry().register(new PickaxeItem(ItemTier.GLOWSTONE_CRYSTAL, 1, -2.8F, defaultItemProperties()).setRegistryName("glowstone_crystal_pickaxe"));
-		event.getRegistry().register(new AxeItem(ItemTier.GLOWSTONE_CRYSTAL, 6.0F, -3.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_axe"));
-		event.getRegistry().register(new HoeItem(ItemTier.GLOWSTONE_CRYSTAL, -3.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_hoe"));
+		event.getRegistry().register(new AxeItem(ItemTier.GLOWSTONE_CRYSTAL, 5.0F, -3.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_axe"));
+		event.getRegistry().register(new HoeItem(ItemTier.GLOWSTONE_CRYSTAL, 0.0F, defaultItemProperties()).setRegistryName("glowstone_crystal_hoe"));
 		//onyx
 		event.getRegistry().register(new Item(defaultItemProperties()).setRegistryName("onyx_gem"));
 		event.getRegistry().register(new SwordItem(ItemTier.ONYX, 3, -2.4F, defaultItemProperties()).setRegistryName("onyx_sword"));

@@ -8,7 +8,7 @@ public enum ItemTier implements IItemTier
 {
 	//all are the same as gold for now
 	CHALONITE(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.ONYX_GEM)),
-	GLOWSTONE_CRYSTAL(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.GLOWSTONE_CRYSTAL)),
+	GLOWSTONE_CRYSTAL(3, 1561, 8.0F, 3.0F, 10, Ingredient.fromItems(ItemRegistrar.GLOWSTONE_CRYSTAL)),
 	GHOSTSOUL(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.GHOSTSOUL_INGOT)),
 	ONYX(0, 32, 12.0F, 0.0F, 22, Ingredient.fromItems(ItemRegistrar.ONYX_GEM));
 
